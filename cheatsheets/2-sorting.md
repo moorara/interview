@@ -107,7 +107,7 @@ public static void sort(Comparable[] a) {
   Comparable[] aux = new Comparable[n];
   for (int size = 1; size < n; size += size)
     for (int lo = 0; lo < n - size; lo += size + size)
-      merge(a, aux, lo, lo + size - 1, Math.min(lo + size + size - 1, N - 1));
+      merge(a, aux, lo, lo + size - 1, Math.min(lo + size + size - 1, n - 1));
 }
 ```
 

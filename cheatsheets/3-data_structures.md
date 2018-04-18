@@ -18,8 +18,7 @@
       * AVL Binary Search Tree
       * Red-Black Binary Search Tree
       * B-Tree, B<sup>+</sup>-Tree, B<sup>\*</sup>-Tree
-      * Trie Tree
-      * Patricia Tree
+      * Trie Tree, Patricia Tree
     * Unordered:
       * Hash Table
   * **Spatial**

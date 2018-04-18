@@ -82,7 +82,7 @@
 ### Divide-and-Conquer:
 
   1. **Divide** the problem into a number of **sub-problems** that are smaller instances of the same problem.
-  2. **Conquer** the sub-problem s by solving them **recursively**. If the sub-problem sizes are small enough, solve them in a straightforward manner.
+  2. **Conquer** the sub-problems by solving them **recursively**. If the sub-problem sizes are small enough, solve them in a straightforward manner.
   3. **Combine** the solutions to the sub-problems into the solution for the original problem.
 
 

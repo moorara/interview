@@ -53,3 +53,11 @@
     * Event-based using Message Brokers
     * Competing Workers Pattern
     * Fanout Pattern
+
+### API Composition
+
+  * Chained Pattern
+  * Proxy (API Gateway) Pattern
+  * Aggregate Pattern
+    * Front-end Aggregator
+    * Back-end Aggregator

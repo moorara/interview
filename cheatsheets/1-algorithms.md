@@ -18,7 +18,7 @@
       * Traveling Salesman Decision Problem
       * Subgraph Isomorphism Problem
       * Graph Coloring Decision Problem
-  * NP-Hard :
+  * **NP-Hard**
     * A **problem** is NP-Hard if all other problems in NP can be reduced to it in polynomial time.
     * NP-hard problems do not have to be in NP, and they do not have to be decision problems.
     * NP-Hard problems are at least as hard as the hardest problems in NP.

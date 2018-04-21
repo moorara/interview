@@ -61,3 +61,18 @@
   * Aggregate Pattern
     * Front-end Aggregator
     * Back-end Aggregator
+
+
+## Serverless
+
+  * **Benefits**
+    * Scalability
+    * Cost & Utilization
+    * Managed Infrastructure
+    * SaaS Integrations
+    * Internet of Things
+    * Developer Productivity
+  * **Drawbacks**
+    * Debugging
+    * Obscure Infrastructure
+    * Opinionated Development Process

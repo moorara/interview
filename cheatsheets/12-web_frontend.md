@@ -16,13 +16,6 @@
     * WebWorker is a JavaScript running in the background, without affecting the performance of the page.
 
 
-## CSS/UI
-
-  * Bootstrap
-  * Bulma
-  * Material Design
-
-
 ## Single-Page Applications
 
   * React
@@ -30,4 +23,20 @@
   * Ember
   * Angular
   * AngularJS
+
+
+## Progressive Web Applications
+
+  * Web App Manifest
+  * Web Workers
+    * Dedicated Workers
+    * Shared Workers
+    * Service Workers
+  * Storage
+    * Web Storage
+      * localStorage
+      * sessionStorage
+    * IndexedDB
+  * Background Sync
+  * Web Push Notifications
 

@@ -33,6 +33,7 @@
     * Shared Workers
     * Service Workers
   * Storage
+    * CacheStorage
     * Web Storage
       * localStorage
       * sessionStorage

@@ -2,8 +2,6 @@
 
 ## HTML5:
 
-  * Application Cache:
-    * HTML5 application cache lets a web application be cached and accessible without an internet connection.
   * Canvas:
   * Drag & Drop:
   * Geolocation:
@@ -40,4 +38,38 @@
     * IndexedDB
   * Background Sync
   * Web Push Notifications
+
+
+## Cross-Origin Resource Sharing (CORS)
+
+  * Simple Requests
+    * Methods:
+      * GET
+      * HEAD
+      * POST
+    * Headers:
+      * Accept
+      * Accept-Language
+      * Content-Language
+      * Content-Type
+        * text/plain
+        * multipart/form-data
+        * application/x-www-form-urlencoded
+  * Preflighted Requests
+    * Methods:
+      * PUT
+      * PATCH
+      * DELETE
+      * TRACE
+      * OPTIONS
+      * CONNECT
+    * Or any Header other than:
+      * Accept
+      * Accept-Language
+      * Content-Language
+      * Content-Type
+    * Or any Content-Type other than:
+      * text/plain
+      * multipart/form-data
+      * application/x-www-form-urlencoded
 

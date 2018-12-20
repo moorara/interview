@@ -147,7 +147,7 @@
     * Address range: `240.0.0.0` - `255.255.255.255`
     * Total addresses: 228 addresses
 
-###Private Networks:
+### Private Networks:
 
   * A private network is a network that uses a private IP address space.
   * Private IP addresses are commonly used for home, office, and enterprise local area networks.

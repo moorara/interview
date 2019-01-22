@@ -1,6 +1,6 @@
 # Cloud Computing
 
-## Cloud Best Practices
+## Best Practices
 
   * **Design for Failure**
     * Fail over gracefully.

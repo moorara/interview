@@ -7,28 +7,28 @@
     * Skip-List
     * Stack (LIFO)
     * Queue (FIFO)
-  * **Heaps**
+  * **[Heaps](#heap)**
     * Binary Heaps
     * Binomial Heaps
     * Fibonacci Heaps
     * Pairing Heaps
-  * **Symbol Tables**
+  * **[Symbol Tables](#symbol-table)**
     * Ordered:
-      * Binary Search Tree
+      * [Binary Search Tree](#binary-search-tree)
       * AVL Binary Search Tree
       * Red-Black Binary Search Tree
       * B-Tree, B<sup>+</sup>-Tree, B<sup>\*</sup>-Tree
       * Trie Tree, Patricia Tree
     * Unordered:
-      * Hash Table
-  * **Spatial**
+      * [Hash Table](#hash-tables)
+  * **[Spatial](#spatial-data-structures)**
     * Range Tree
     * Quadtree
     * k-d Tree
     * BSP Tree
     * Interval Tree
     * R-Tree, R<sup>+</sup>-Tree, R<sup>\*</sup>-Tree
-  * **Graphs**
+  * **[Graphs](#graphs)**
     * Undirected Graph
     * Directed Graph
     * Weighted Graph
@@ -165,40 +165,6 @@ public interface ST<Key, Value> {
     Lookup in an AVL tree is typically faster, but this comes at the cost of slower insertion and deletion.
 
 
-### Spatial Data Structures
-
-  * **k-d Tree** is a space partitioning data structure for **k-dimensional points**. It allows range search, range count, and other queries.
-  * The k-d tree is a **self-balancing** binary search tree in which:
-    * Every node represents a k-dimensional point.
-    * The 1st dimension is the key of node (root) in level 1, the 2nd dimension is the key of nodes in level 2, and so on (circular).
-    * Every node divides the space into two half-spaces by a splitting hyperplane (every node is associated with one of the k-dimensions).
-    * Points with i-dimension value less than i-dimension value of the hyperplane are represented by the left sub-tree.
-    * Points with i-dimension value greater than i-dimension value of the hyperplane are represented by the right sub-tree.
-
-
-  * **Interval Tree** is a data structure for holding intervals and finding overlapping ones.
-  * Interval tree is implemented using a self-balancing binary search tree.
-    * Each node contains left and right endpoints of an interval, and the left endpoint is the key of node.
-    * Each node also stores the maximum endpoint in sub-tree rooted at node.
-  * To search for any one interval that intersects query interval **(lo, hi)**:
-    * If interval in node intersects query interval, return it.
-    * Else if left sub-tree is null, go right.
-    * Else if max endpoint in left sub-tree is less than lo, go right.
-    * Else go left.
-
-
-  * **R-Tree** is a balanced search tree for indexing spatial data optimized for external memory.
-  * In an R-tree of order **M**:
-    * Each node (except root) can contain a number of entries between a minimum fill **30%-40%** and **M**.
-    * Each entry within a non-leaf node stores the pointer to a child node and the bounding box of all entries within the child node.
-    * Leaf nodes store a point or bounding box representing the child and an external identifier for the child.
-  * The order of an R-tree, **M**, should be large enough so that a node can fit in a data block (page).
-  * In an R-tree, the average search time is **O(Mlog<sub>M</sub><sup>N</sup>)** and the worst-case insertion time is **O(N)**.
-  * Coverage is the entire area to cover all related rectangles and Overlap is the entire area which is contained in two or more nodes.
-  * **R<sup>+</sup>-Tree** avoids overlapping of internal nodes by inserting an object into multiple leaves if necessary.
-  * **R<sup>*</sup>-Tree** attempts to minimize both coverage and overlap using a revised node split algorithm and forced reinsertion at node overflow.
-
-
 ### Hash Tables
 
 * Hash function is a function to map an arbitrary size data to a fixed-size number.
@@ -242,6 +208,40 @@ public interface ST<Key, Value> {
 |----------------------|----------------|----------------|----------------|------------------|------------------|------------------|
 | Separate Chaining    | lgN            | lgN            | lgN            | 3-5              | 3-5              | 3-5              |
 | Linear Probing       | lgN            | lgN            | lgN            | 3-5              | 3-5              | 3-5              |
+
+
+### Spatial Data Structures
+
+  * **k-d Tree** is a space partitioning data structure for **k-dimensional points**. It allows range search, range count, and other queries.
+  * The k-d tree is a **self-balancing** binary search tree in which:
+    * Every node represents a k-dimensional point.
+    * The 1st dimension is the key of node (root) in level 1, the 2nd dimension is the key of nodes in level 2, and so on (circular).
+    * Every node divides the space into two half-spaces by a splitting hyperplane (every node is associated with one of the k-dimensions).
+    * Points with i-dimension value less than i-dimension value of the hyperplane are represented by the left sub-tree.
+    * Points with i-dimension value greater than i-dimension value of the hyperplane are represented by the right sub-tree.
+
+
+  * **Interval Tree** is a data structure for holding intervals and finding overlapping ones.
+  * Interval tree is implemented using a self-balancing binary search tree.
+    * Each node contains left and right endpoints of an interval, and the left endpoint is the key of node.
+    * Each node also stores the maximum endpoint in sub-tree rooted at node.
+  * To search for any one interval that intersects query interval **(lo, hi)**:
+    * If interval in node intersects query interval, return it.
+    * Else if left sub-tree is null, go right.
+    * Else if max endpoint in left sub-tree is less than lo, go right.
+    * Else go left.
+
+
+  * **R-Tree** is a balanced search tree for indexing spatial data optimized for external memory.
+  * In an R-tree of order **M**:
+    * Each node (except root) can contain a number of entries between a minimum fill **30%-40%** and **M**.
+    * Each entry within a non-leaf node stores the pointer to a child node and the bounding box of all entries within the child node.
+    * Leaf nodes store a point or bounding box representing the child and an external identifier for the child.
+  * The order of an R-tree, **M**, should be large enough so that a node can fit in a data block (page).
+  * In an R-tree, the average search time is **O(Mlog<sub>M</sub><sup>N</sup>)** and the worst-case insertion time is **O(N)**.
+  * Coverage is the entire area to cover all related rectangles and Overlap is the entire area which is contained in two or more nodes.
+  * **R<sup>+</sup>-Tree** avoids overlapping of internal nodes by inserting an object into multiple leaves if necessary.
+  * **R<sup>*</sup>-Tree** attempts to minimize both coverage and overlap using a revised node split algorithm and forced reinsertion at node overflow.
 
 
 ## Graphs

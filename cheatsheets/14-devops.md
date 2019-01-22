@@ -2,4 +2,8 @@
 
 ## Continuous Integration & Delivery
 
-## Monitoring & Alerting
+## Observability
+
+  * Logging
+  * Metrics
+  * Tracing

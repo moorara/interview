@@ -19,7 +19,16 @@
     * Sinatra
 
 
-## REST API
+## API Paradigms
+
+  * REST
+  * [GraphQL](https://graphql.org)
+  * RPC
+    - [gRPC](https://grpc.io)
+    - [JSON-RPC](https://www.jsonrpc.org)
+
+
+### REST API
 
   * **REpresentational State Transfer**
   * REST is **resource-based** or noun-based instead of action-based or verb-based (versus RPC/SOAP).

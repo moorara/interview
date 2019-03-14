@@ -62,6 +62,14 @@
     * Front-end Aggregator
     * Back-end Aggregator
 
+### Security
+
+  * Defend in Depth
+  * Reduce Attack Surface
+  * Principle of Least Privilege
+  * Access Control
+  * Secure Communications
+
 
 ## Serverless
 

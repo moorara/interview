@@ -16,16 +16,30 @@
 
 ## V-Model
 
-  * Unit Testing         —>  Implementation/Code
-  * Component Testing    —>  Detailed Design
-  * Integration Testing  —>  Subsystem Design
-  * System Testing       —>  Architectural Design
-  * Acceptance Testing   —>  Requirements
+  - Unit Testing         —>  Implementation/Code
+  - Component Testing    —>  Detailed Design
+  - Integration Testing  —>  Subsystem Design
+  - System Testing       —>  Architectural Design
+  - Acceptance Testing   —>  Requirements
 
 
 ## Testing Pyramid
 
-  * E2E Testing
-  * Integration Testing
-  * Component Testing
-  * Unit Testing
+  - E2E Testing
+  - Integration Testing
+  - Component Testing
+  - Unit Testing
+
+##
+
+### API Testing
+
+### UI Testing
+
+### Performance Testing
+
+  - Load Testing
+  - Stress Testing
+  - Spike Testing
+  - Endurance Testing
+  - Scalability testing

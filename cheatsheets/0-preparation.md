@@ -1,35 +1,35 @@
 # Preparation
 
 **Academic Approach to Interviewing**:
-  * Coding Abilities
-  * Thought Process
-  * Approach to Problem Solving
+  - Coding abilities
+  - Thought process
+  - Approach to problem solving
 
 **Technical Knowledge**:
-  * Coding
-  * Algorithms
-  * Performance
-  * Scalability
-  * System Design
-  * Solution Testing
+  - Coding
+  - Algorithms
+  - Performance
+  - Scalability
+  - System Design
+  - Solution Testing
 
 **Before Interview**:
   * Practice on a whiteboard or paper
 
 **During Interview**:
-  * NO Stress!
-  * DON'T go Silent!
-  * Know your Resume!
-  * Handle Corner Cases
-  * TALK through the Problems
-  * ASK Questions from Interviewers
-  * Speak about yourself, not your team
-  * Converse, Communicate, and Interact!
-  * State, Clarify, and Define your Assumptions
-  * Explain your Decision and other Alternatives
-  * Have a Conversation about Advantages and Disadvantages
-  * Start with a Simple Solution, and then Optimize up to a Better Solution!
+  - NO stress!
+  - DON'T go silent!
+  - Know your resume!
+  - Handle corner cases
+  - TALK through the problems
+  - ASK questions from interviewers
+  - Speak about yourself, not your team
+  - Converse, communicate, and interact!
+  - State, clarify, and define your assumptions
+  - Explain your decision and other alternatives
+  - Have a conversation about advantages and disadvantages
+  - Start with a simple solution, and then optimize up to a better solution
 
 ## Resources:
 
-  * https://www.youtube.com/user/GoogleStudents
+  - https://www.youtube.com/user/GoogleStudents

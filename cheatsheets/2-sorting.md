@@ -26,8 +26,7 @@ public static void sort(Comparable[] a) {
   for (int i = 0; i < N; i++) {
     int min = i;
     for (int j = i + 1; j < N; j++)
-      if (a[j] < a[min])
-        min = j;
+      if (a[j] < a[min]) min = j;
       exchange(a, i, min);
   }
 }
@@ -40,11 +39,8 @@ public static void sort(Comparable[] a) {
 public static void sort(Comparable[] a) {
   int N = a.length;
   for (int i = 0; i < N; i++)
-    for (int j = i; j > 0; j--)
-      if (a[j] < a[j - 1])
-        exchange(a, j, j - 1);
-      else
-        break;
+    for (int j = i; j > 0 && a[j] < a[j-1]; j--)
+      exchange(a, j, j-1);
 }
 ```
 
@@ -58,13 +54,15 @@ public static void sort(Comparable[] a) {
 public static void sort(Comparable[] a) {
   int N = a.length;
   int h = 1;
-  while (h < N / 3)
-    h = 3 * h + 1;  // 1, 4, 13, 40, 121, ...
+  while (h < N/3)
+    h = 3*h + 1;  // 1, 4, 13, 40, 121, ...
   while (h >= 1) {
-    for (int i = h; i < N; i++)  // h-sort the array
-      for (int j = i; j >= h && a[j] < a[j - h]; j -= h)
-        exchange(a, j, j - h);
-    h = h / 3;
+    // h-sort the array
+    for (int i = h; i < N; i++)
+      // Insert a[i] among a[i-h], a[i-2*h], a[i-3*h], ...
+      for (int j = i; j >= h && a[j] < a[j-h]; j -= h)
+        exchange(a, j, j-h);
+    h = h/3;
   }
 }
 ```
@@ -73,6 +71,7 @@ public static void sort(Comparable[] a) {
   - A g-sorted array remains g-sorted after h-sorting.
   - Shell sort **h-sorts** array for decreasing sequence of h values. In order to h-sort, we use insertion sort with stride length h.
   - The worst-case number of compares used by Shell sort with 3h+1 increment is O(N<sup>3/2</sup>).
+  - Read more ([1](https://en.wikipedia.org/wiki/Shellsort), [2](https://www.tutorialspoint.com/data_structures_algorithms/shell_sort_algorithm.htm))
 
 
 ### Merge Sort
@@ -91,7 +90,7 @@ private static void merge(Comparable[] a, Comparable[] aux, int lo, int mid, int
 }
 
 // Recursive
-public static void sort(Comparable[] a, Comparable[] aux, int lo, int hi) {
+private static void sort(Comparable[] a, Comparable[] aux, int lo, int hi) {
   if (hi <= lo)
     return;
   int mid = lo + (hi - lo) / 2;
@@ -99,6 +98,12 @@ public static void sort(Comparable[] a, Comparable[] aux, int lo, int hi) {
   sort(a, aux, mid + 1, hi);
   if (a[mid + 1] >= a[mid]) return;  // improvement to help for partially-ordered arrays
   merge(a, aux, lo, mid, hi);
+}
+
+// Driver
+public static void sort(Comparable[] a) {
+  Comparable[] aux = new Comparable[a.length];
+  sort(a, aux, 0, a.length - 1);
 }
 
 // Iterative
@@ -130,15 +135,16 @@ private static int partition(Comparable[] a, int lo, int hi) {
   while (true) {
     while (a[++i] < v)
       if (i == hi) break;
-    while (v < a[--j])
+    while (a[--j] > v)
       if (j == lo) break;
     if (i >= j) break;
     exchange(a, i, j);
   }
   exchange(a, lo, j);
-  return j;
+  return j;  // a[lo..j-1] <= a[j] <= a[j+1..hi]
 }
 
+// Recursive
 private static void sort(Comparable[] a, int lo, int hi) {
   if (hi <= lo) return;
   int j = partition(a, lo, hi);
@@ -146,6 +152,7 @@ private static void sort(Comparable[] a, int lo, int hi) {
   sort(a, j + 1, hi);
 }
 
+// Driver
 public static void sort(Comparable[] a) {
   shuffle(a);  // can be done in Θ(n)
   sort(a, 0, a.length - 1);
@@ -180,7 +187,8 @@ public static Comparable select(Comparable[] a, int k) {
   - no smaller entries to the right of `gt`.
 
 ```java
-public static void sort(Comparable[] a, int lo, int hi) {
+// Recursive
+private static void sort(Comparable[] a, int lo, int hi) {
   if (hi <= lo) return;
   int lt = i = lo, gt = hi;
   Comparable v = a[lo];
@@ -189,9 +197,15 @@ public static void sort(Comparable[] a, int lo, int hi) {
     if      (cmp < 0)  exchange(a, lt++, i++);
     else if (cmp > 0)  exchange(a, i, gt--);
     else               i++;
-  }
+  } // a[lo..lt-1] < v = a[lt..gt] < a[gt+1..hi].
   sort(a, lo, lt - 1);
   sort(a, gt + 1, hi);
+}
+
+// Driver
+public static void sort(Comparable[] a) {
+  shuffle(a);  // can be done in Θ(n)
+  sort(a, 0, a.length - 1);
 }
 ```
 

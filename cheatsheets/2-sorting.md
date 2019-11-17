@@ -15,10 +15,10 @@
 | [MSD Radix](#radix-sort)         |                 | Nlog<sub>R</sub>N | 2NW             | N+DR  | Stable, **Non-comparative**, Average-length W keys |
 | [Radix Quick](#radix-sort)       |                 | 2NlnN             | 2NWlnR          | lgN+W | Char/Digit compare-based, Cache-friendly           |
 
-  * Any **compare-based** sorting algorithm must use at least **lg(N!) ~ NlgN** compares in the worst case.
+  - Any **compare-based** sorting algorithm must use at least **lg(N!) ~ NlgN** compares in the worst case.
 
 
-### Selection Sort:
+### Selection Sort
 
 ```java
 public static void sort(Comparable[] a) {
@@ -34,7 +34,7 @@ public static void sort(Comparable[] a) {
 ```
 
 
-### Insertion Sort:
+### Insertion Sort
 
 ```java
 public static void sort(Comparable[] a) {
@@ -48,11 +48,11 @@ public static void sort(Comparable[] a) {
 }
 ```
 
-  * For partially sorted (the number of inversions is linear) arrays,
+  - For partially sorted (the number of inversions is linear) arrays,
     insertion sort runs in linear time (the number of exchanges equals the number of inversions).
 
 
-### Shell Sort:
+### Shell Sort
 
 ```java
 public static void sort(Comparable[] a) {
@@ -69,13 +69,13 @@ public static void sort(Comparable[] a) {
 }
 ```
 
-  * An **h-sorted** array is **h** interleaved sorted subsequences.
-  * A g-sorted array remains g-sorted after h-sorting.
-  * Shell sort **h-sorts** array for decreasing sequence of h values. In order to h-sort, we use insertion sort with stride length h.
-  * The worst-case number of compares used by Shell sort with 3h+1 increment is O(N<sup>3/2</sup>).
+  - An **h-sorted** array is **h** interleaved sorted subsequences.
+  - A g-sorted array remains g-sorted after h-sorting.
+  - Shell sort **h-sorts** array for decreasing sequence of h values. In order to h-sort, we use insertion sort with stride length h.
+  - The worst-case number of compares used by Shell sort with 3h+1 increment is O(N<sup>3/2</sup>).
 
 
-### Merge Sort:
+### Merge Sort
 
 ```java
 private static void merge(Comparable[] a, Comparable[] aux, int lo, int mid, int hi) {
@@ -111,17 +111,17 @@ public static void sort(Comparable[] a) {
 }
 ```
 
-  * Merge sort is **optimal w.r.t. number of compares**, but not optimal w.r.t. space usage.
-  * Merge sort has too much overhead for tiny arrays (cut-off to insertion sort = 7).
-  * We can eliminate the copy to the auxiliary array and save more time by switching the role of the input and auxiliary array in each recursive call.
+  - Merge sort is **optimal w.r.t. number of compares**, but not optimal w.r.t. space usage.
+  - Merge sort has too much overhead for tiny arrays (cut-off to insertion sort = 7).
+  - We can eliminate the copy to the auxiliary array and save more time by switching the role of the input and auxiliary array in each recursive call.
 
 
-### Quick Sort:
+### Quick Sort
 
 **Partitioning**: the array for some `j` such that:
-  * entry `a[j]` is in place
-  * no larger entry to the left of `j`
-  * no smaller entry to the right of `j`
+  - entry `a[j]` is in place
+  - no larger entry to the left of `j`
+  - no smaller entry to the right of `j`
 
 ```java
 private static int partition(Comparable[] a, int lo, int hi) {
@@ -164,20 +164,20 @@ public static Comparable select(Comparable[] a, int k) {
 }
 ```
 
-  * **Shuffling** is needed for probabilistic guarantee against the worst case.
-  * Quick sort has 39% more compares than Merge sort, but it is faster in practice.
-  * Quick sort has too much overhead for tiny sub-arrays (cut-off to insertion sort = 10).
-  * Best choice for pivot item is median, and it can be estimated by taking median of a sample (3 random items).
-  * **Quick-select** takes linear time on average.
-  * Using an extra array makes partitioning stable, but is not worth the cost.
+  - **Shuffling** is needed for probabilistic guarantee against the worst case.
+  - Quick sort has 39% more compares than Merge sort, but it is faster in practice.
+  - Quick sort has too much overhead for tiny sub-arrays (cut-off to insertion sort = 10).
+  - Best choice for pivot item is median, and it can be estimated by taking median of a sample (3 random items).
+  - **Quick-select** takes linear time on average.
+  - Using an extra array makes partitioning stable, but is not worth the cost.
 
 
-### 3-Way Quick Sort:
+### 3-Way Quick Sort
 
 **3-Way Partitioning**: partition array into `3` parts so that:
-  * entries between `lt` and `gt` equal to partition item `v`
-  * no larger entries to the left of `lt`.
-  * no smaller entries to the right of `gt`.
+  - entries between `lt` and `gt` equal to partition item `v`
+  - no larger entries to the left of `lt`.
+  - no smaller entries to the right of `gt`.
 
 ```java
 public static void sort(Comparable[] a, int lo, int hi) {
@@ -195,10 +195,10 @@ public static void sort(Comparable[] a, int lo, int hi) {
 }
 ```
 
-  * Quick sort with 3-way partitioning is **entropy-optimal**.
+  - Quick sort with 3-way partitioning is **entropy-optimal**.
 
 
-### Heap Sort:
+### Heap Sort
 
 ```java
 private static void sink(Comparable[] a, int k, int n) {
@@ -222,11 +222,11 @@ public static void sort(Comparable[] a) {
 }
 ```
 
-  * Heap sort is the only in-place sorting algorithm with **NlgN** compares in the **worst-case**.
-  * Heap sort is **optimal for both time and space**, but its inner loop is longer than Quick sort, and it makes poor use of cache memory.
+  - Heap sort is the only in-place sorting algorithm with **NlgN** compares in the **worst-case**.
+  - Heap sort is **optimal for both time and space**, but its inner loop is longer than Quick sort, and it makes poor use of cache memory.
 
 
-### Radix Sort:
+### Radix Sort
 
 Key-indexed counting is efficient for sorting keys which are integers between `0` and `R - 1`, and `R` is a small number.
 
@@ -277,10 +277,10 @@ public static void sort_msd(String[] a) {
 }
 ```
 
-  * LSD and MSD Radix sorting algorithms are efficient for a large number of keys with small constant width.
-  * MSD Radix sorting algorithm accesses memory randomly, and it is **cache inefficient**.
-  * MSD Radix sorting algorithm creates huge number of small sub-arrays due to recursion, and it is much too slow for small sub-arrays.
-  * Cut-off to insertion sort for small sub-arrays can be implemented.
+  - LSD and MSD Radix sorting algorithms are efficient for a large number of keys with small constant width.
+  - MSD Radix sorting algorithm accesses memory randomly, and it is **cache inefficient**.
+  - MSD Radix sorting algorithm creates huge number of small sub-arrays due to recursion, and it is much too slow for small sub-arrays.
+  - Cut-off to insertion sort for small sub-arrays can be implemented.
 
 ```java
 private static void less(String a, string b, int d) {
@@ -295,7 +295,7 @@ public static void sort_insertion(String[] a, int lo, int hi, int d) {
 ```
 
 
-### 3-Way Radix Quick Sort:
+### 3-Way Radix Quick Sort
 
 ```java
 private static int charAt(String s, int d) {
@@ -328,6 +328,5 @@ public static void sort(String[] a) {
 }
 ```
 
-  * 3-Way Radix Quick sort algorithm avoids re-comparing long common prefixes.
-
+  - 3-Way Radix Quick sort algorithm avoids re-comparing long common prefixes.
 

@@ -185,21 +185,21 @@ public interface ST<Key, Value> {
 
 - Hash table is a space-time trade-off.
 - Hash function maps key to an integer `i` between `0` and `M-1`.
-- Separate Chaining:
+- **Separate Chaining**:
   - An array of M < N linked-lists (chains or buckets).
   - Insert: put at front of i<sup>th</sup> chain.
   - Search: need to search only i<sup>th</sup> chain.
   - Number of probes for search/insert is proportional to N/M. Typical choice for M is M ~ N/5.
-- Open Addressing:
-  - Linear Probing:
+- **Open Addressing**:
+  - **Linear Probing**:
     - When a new key collides, find next empty slot, and put it there.
     - When a collision occurs at index H, the next indices are: H+1, H+2, H+3, ...
     - Array size M must be greater than number of key-value pairs N. Typical choice is α = N/M ~ 1/2.
     - Linear probing has a great spatial locality and, thus, better cache performance.
-  - Quadratic Probing:
+  - **Quadratic Probing**:
     - Quadratic probing better avoids the clustering problem that can occur with linear probing.
     - When a collision occurs at index H, the next indices are: H+1<sup>2</sup>, H+2<sup>2</sup>, H+3<sup>2</sup>, ...
-  - Double Hashing:
+  - **Double Hashing**:
     - Double hashing is similar to linear probing, but skips a variable amount each time using a second hash function.
     - Double hashing effectively eliminates clustering and can allow table to be become nearly full.
     - Given h<sub>1</sub> and h<sub>2</sub> hash functions, and a key k, the i+1 hash location is: h(i,k) = (h<sub>1</sub>(k) + i * h<sub>2</sub>(k)) mod M

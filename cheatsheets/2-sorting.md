@@ -190,7 +190,7 @@ public static Comparable select(Comparable[] a, int k) {
 // Recursive
 private static void sort(Comparable[] a, int lo, int hi) {
   if (hi <= lo) return;
-  int lt = i = lo, gt = hi;
+  int lt = lo, i = lo+1, gt = hi;
   Comparable v = a[lo];
   while (i <= gt) {
     int cmp = a[i].compareTo(v);
@@ -236,7 +236,7 @@ public static void sort(Comparable[] a) {
 }
 ```
 
-  - Heap sort is the only in-place sorting algorithm with **NlgN** compares in the **worst-case**.
+  - Heap sort is the only **in-place** sorting algorithm with **NlgN** compares in the **worst-case**.
   - Heap sort is **optimal for both time and space**, but its inner loop is longer than Quick sort, and it makes poor use of cache memory.
 
 

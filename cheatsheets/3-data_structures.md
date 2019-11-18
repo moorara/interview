@@ -252,7 +252,7 @@ public interface ST<Key, Value> {
   - **Cycle**: path whose first and last vertices are the same.
   - **DAG**: a directed graph which has no cycle.
   - **Connectivity**: Two vertices are connected if there is a path between them (equivalence relation: reflexive, symmetric, and transitive).
-  - Strong-Connectivity: v and w are strongly-connected if there is a directed path from v to w and a directed path from w to v. (equivalence relation)
+  - **Strong-Connectivity**: v and w are strongly-connected if there is a directed path from v to w and a directed path from w to v. (equivalence relation)
   - **Connected Component**: a maximal set of connected vertices.
   - **Strongly-Connected Component**: a maximal set of strongly-connected vertices.
   - **Connected Graph**: a graph in which every pair of vertices are connected.
@@ -266,28 +266,50 @@ public interface ST<Key, Value> {
   - **Isomorphic Graphs**: two graphs which contain the same number of vertices connected in the same way are said to be isomorphic.
 
 
+### Implementation
+
   - Graphs and Digraphs are represented with adjacency-list:
     - An array of size `V` (the number of vertices)
     - Each entry `v` points to the collection of other vertices connected to the vertex `v`.
     - The needed space is proportional to `E + V`.
 
+| Data Structure   | Space         | Add Edge | Check v-w adjacency | Check adjacent vertices |
+|------------------|---------------|----------|---------------------|-------------------------|
+| List of Edges    | E             | 1        | E                   | E                       |
+| Adjacency Matrix | V<sup>2</sup> | 1        | 1                   | V                       |
+| Adjacency List   | E + V         | 1        | degree(v)           | degree(v)               |
+| Adjacency Set    | E + V         | logV     | logV                | logV + degree(v)        |
+
+
+### Algorithms
+
+#### DFS
 
   - **Depth-First Search** puts unvisited vertices on a stack.
-  - DFS marks all vertices connected to  s  in time proportional to the sum of their degrees.
+  - DFS marks all vertices connected to `s` in time proportional to the sum of their degrees.
 
 ```java
-private void dfs(Graph G, int v) {
-  marked[v] = true;
-  id[v] = comp;  // only for connected_components() method
-  for (int w : G.adj(v))
-    if (!marked[w]) {
-      dfs(G, w);
-      edgeTo[w] = v;
-    }
-  reversePost.push(v);  // only for topological sort in digraph
+public class DepthFirstSearch {
+  private int count;
+  private boolean[] marked;
+
+  public void DFS(Graph G, int s) {
+    marked = new boolean[G.V()];
+    dfs(G, s);
+  }
+
+  private void dfs(Graph G, int v) {
+    count++;
+    marked[v] = true;
+    for (int w : G.adj(v))
+      if (!marked[w])
+        dfs(G, w);
+  }
 }
 ```
 
+
+#### BFS
 
   - **Breadth-First Search** puts unvisited vertices on queue.
   - BFS computes the shortest-paths from `s` to all other vertices in a graph in time proportional to `E + V`.
@@ -305,12 +327,13 @@ private void bfs(Graph G, int s) {
       if (!marked[w]) {
         q.enqueue(w);
         marked[w] = true;
-        edgeTo[w] = v;
       }
   }
 }
 ```
 
+
+####
 
   - Having pre-processed a graph, we can answer connectivity queries in constant time.
 

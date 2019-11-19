@@ -289,14 +289,26 @@ public interface ST<Key, Value> {
   - DFS marks all vertices connected to `s` in time proportional to the sum of their degrees.
 
 ```java
+// Non-Recursive
+private void dfs(Graph G, int s) {
+  Stack<Integer> s = new Stack<Integer>();
+  s.push(s);
+  marked[s] = true;
+  while (!s.isEmpty()) {
+    int v = s.pop();
+    for (int w : G.adj(v))
+      if (!marked[w]) {
+        s.push(w);
+        marked[w] = true;
+      }
+  }
+}
+```
+
+```java
 public class DepthFirstSearch {
   private int count;
   private boolean[] marked;
-
-  public void DFS(Graph G, int s) {
-    marked = new boolean[G.V()];
-    dfs(G, s);
-  }
 
   private void dfs(Graph G, int v) {
     count++;
@@ -305,6 +317,44 @@ public class DepthFirstSearch {
       if (!marked[w])
         dfs(G, w);
   }
+
+  public void DepthFirstSearch(Graph G, int s) {
+    marked = new boolean[G.V()];
+    dfs(G, s);
+  }
+}
+```
+
+```java
+public class DepthFirstPaths {
+  private int s;
+  private int[] edgeTo;
+  private boolean[] marked;
+
+  private void dfs(Graph G, int v) {
+    marked[v] = true;
+    for (int w : G.adj(v))
+      if (!marked[w]) {
+        edgeTo[w] = v;
+        dfs(G, w);
+      }
+  }
+
+  public DepthFirstPaths(Graph G, int s) {
+    this.s = s;
+    edgeTo = new int[G.V()];
+    marked = new boolean[G.V()];
+    dfs(G, s);
+  }
+
+  public Iterable<Integer> pathTo(int v) {
+    if (!marked(v)) return null;
+    Stack<Integer> path = new Stack<Integer>();
+    for (int x = v; x != s; x = edgeTo[x])
+      path.push(x);
+    path.push(s);
+    return path;
+  }
 }
 ```
 
@@ -312,7 +362,7 @@ public class DepthFirstSearch {
 #### BFS
 
   - **Breadth-First Search** puts unvisited vertices on queue.
-  - BFS computes the shortest-paths from `s` to all other vertices in a graph in time proportional to `E + V`.
+  - BFS computes the **shortest-paths** from `s` to all other vertices in a graph in time proportional to `E + V`.
   - Multiple-source shortest paths: to find the shortest path from any vertex in a set of vertices to each other vertex,
     we can use BFS initialized by enqueueing all source vertices in the set.
 
@@ -332,23 +382,73 @@ private void bfs(Graph G, int s) {
 }
 ```
 
+```java
+public class BreadthFirstPaths {
+  private int s;
+  private int[] edgeTo;
+  private boolean[] marked;
 
-####
+  private void bfs(Graph G, int s) {
+    Queue<Integer> q = new Queue<Integer>();
+    q.enqueue(s);
+    marked[s] = true;
+    while (!q.isEmpty()) {
+      int v = q.dequeue();
+      for (int w : G.adj(v))
+        if (!marked[w]) {
+          q.enqueue(w);
+          edgeTo[w] = v;
+          marked[w] = true;
+        }
+    }
+  }
+
+  public BreadthFirstPaths(Graph G, int s) {
+    this.s = s;
+    edgeTo = new int[G.V()];
+    marked = new boolean[G.V()];
+    bfs(G, s);
+  }
+}
+```
+
+
+#### Connected Components
 
   - Having pre-processed a graph, we can answer connectivity queries in constant time.
 
 ```java
-private void connected_components(Graph G) {
-  marked = new boolean[G.V()];
-  id = new int[G.V()];
-  for (int v = 0; v < G.V(); v++)
-    if (!marked[v]) {
-      dfs(G, v);
-      comp++;
-    }
+public class ConnectedComponent {
+  private int count;
+  private int[] id;
+  private boolean[] marked;
+
+  private void dfs(Graph G, int v) {
+    id[v] = count;
+    marked[v] = true;
+    for (int w : G.adj(v))
+      if (!marked[w])
+        dfs(G, w);
+  }
+
+  private void process(Graph G) {
+    id = new int[G.V()];
+    marked = new boolean[G.V()];
+    for (int s = 0; s < G.V(); s++)
+      if (!marked[v]) {
+        dfs(G, v);
+        count++;
+      }
+  }
+
+  public boolean connected(int v, int w) {
+    return id[v] == id[w];
+  }
 }
 ```
 
+
+#### Topological Sort
 
   - A directed graph has a topological order if and only if no directed cycle exists.
   - The reverse DFS post-order of a DAG is a topological order.
@@ -356,14 +456,16 @@ private void connected_components(Graph G) {
 
 ```java
 private void depth_first_order(Digraph G) {
-  reversePost = new Stack<Integer>();
-  marked = new boolean[G.V()];
+  Stack<Integer> reversePost = new Stack<Integer>();
+  boolean[] marked = new boolean[G.V()];
   for (int v = 0; v < G.V(); v++)
     if (!marked[v])
       dfs(G, v);
 }
 ```
 
+
+#### Strongly-Connected Components
 
   - **Strongly-connected components** in directed graph `G` are same as in the reverse of `GR`.
   - **Kosaraju-Sharir algorithm** computes the strongly-connected components of a digraph in time proportional to `E + V`.
@@ -372,17 +474,19 @@ private void depth_first_order(Digraph G) {
 
 ```java
 private void kosaraju_sharir_scc(Digraph G) {
-  marked = new boolean[G.V()];
-  id = new int[G.V()];
+  int[] id = new int[G.V()];
+  boolean[] marked = new boolean[G.V()];
   depth_first_order(G.reverse());
   for (int v : reversePost())
     if (!marked[v]) {
       dfs(G, v);
-      comp++;
+      count++;
     }
 }
 ```
 
+
+#### Minimum Spanning Tree
 
   - **Minimum Spanning Tree:** given an edge-weighted undirected graph `G` with positive edge weights, an MST of `G` is a sub-graph `T` that is:
     - Tree: connected and acyclic
@@ -436,6 +540,8 @@ private void mst_prim_lazy(WeightedGraph G) {
 }
 ```
 
+
+#### Shortest-Path Tree
 
   - **Shortest-Path Tree:** given an edge-weighted directed graph, the shortest path from `s` to every other vertex is a tree.
     - `edgeTo` : a vertex-indexed array in which `edgeTo[v]` is last edge on shortest path from `s` to `v`.

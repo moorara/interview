@@ -14,7 +14,7 @@
 
 ## UML
 
-### UML Diagrams:
+### UML Diagrams
 
   - **Structure Diagrams:**
     - Class Diagram
@@ -32,7 +32,7 @@
       - Interaction Overview Diagram
       - Timing Diagram
 
-### UML Relationships:
+### UML Relationships
 
   - **Class-Level:**
     - Generalization
@@ -44,7 +44,7 @@
     - Composition
 
 
-## [Design Patterns](https://en.wikipedia.org/wiki/Software_design_pattern):
+## [Design Patterns](https://en.wikipedia.org/wiki/Software_design_pattern)
 
   - **Creational Patterns:**
     - [Abstract Factory](https://en.wikipedia.org/wiki/Abstract_factory_pattern)

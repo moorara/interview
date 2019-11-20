@@ -4,6 +4,6 @@
 
 ## Observability
 
-  * Logging
-  * Metrics
-  * Tracing
+  - Logging
+  - Metrics
+  - Tracing

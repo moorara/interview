@@ -1,86 +1,127 @@
 # Software Architecture
 
+## Serverless
+
+  - **Benefits**
+    - Scalability
+    - Cost & utilization
+    - Managed infrastructure
+    - SaaS integrations
+    - Developer productivity
+  - **Drawbacks**
+    - Cold starts
+    - Debugging
+    - Obscure infrastructure
+    - Opinionated development process
+
 ## Microservices
 
 ### Domain-Driven Design
 
-  * **Bounded Context**
-    * A design technique for **scoping** microservices.
-    * Each **bounded context** represents a **domain function** or **microservice**.
+  - **Bounded Context**
+    - A design technique for **scoping** microservices.
+    - Each **bounded context** represents a **domain function** or **microservice**.
 
 ### Design Principles
 
-  * **Business Domain Centric**
-    * Bounded Context
-  * **High Cohesion**
-    * Single Focus/Responsibility
-  * **Autonomous**
-    * Loose Coupling
-      * Contract-based
-      * Technology agnostic API
-      * Avoid client libraries
-      * Avoid sharing between services
-    * Stateless
-    * Independently Changeable
-    * Independently Deployable
-  * **Resilience**
-    * Multi-Instance
-    * Design For Failure
-      * Fail Fast
-      * Timeout
-      * Retry
-      * Circuit Breaking
-    * Degrade Functionality
-    * Default Functionality
-  * **Observable**
-    * Centralized Metrics
-    * Centralized Logging
-    * Distributed Tracing
-  * **Automated**
-    * Continuous Integration
-    * Continuous Delivery
-    * Automated Testing
-    * Automated Monitring/Alerting
-
-### Communications
-
-  * **Synchronous**
-    * RPC
-    * HTTP
-    * REST
-  * **Asynchronous**
-    * Async API Call using Callbacks
-    * Event-based using Message Brokers
-    * Competing Workers Pattern
-    * Fanout Pattern
-
-### API Composition
-
-  * Chained Pattern
-  * Proxy (API Gateway) Pattern
-  * Aggregate Pattern
-    * Front-end Aggregator
-    * Back-end Aggregator
-
-### Security
-
-  * Defend in Depth
-  * Reduce Attack Surface
-  * Principle of Least Privilege
-  * Access Control
-  * Secure Communications
+  - **Business Domain Centric**
+    - Bounded Context
+  - **High Cohesion**
+    - Single Focus/Responsibility
+  - **Autonomous**
+    - Loose Coupling
+      - Contract-based
+      - Technology agnostic API
+      - Avoid client libraries
+      - Avoid sharing between services
+    - Stateless
+    - Independently Changeable
+    - Independently Deployable
+  - **Resilience**
+    - Multi-Instance
+    - Design For Failure
+      - Fail Fast
+      - Timeout
+      - Retry
+      - Circuit Breaking
+    - Degrade Functionality
+    - Default Functionality
+  - **Observable**
+    - Centralized Logging
+    - Centralized Metrics
+    - Distributed Tracing
+  - **Automated**
+    - Continuous Integration
+    - Continuous Delivery
+    - Automated Testing
+    - Automated Monitring/Alerting
 
 
-## Serverless
+### API Design
 
-  * **Benefits**
-    * Scalability
-    * Cost & Utilization
-    * Managed Infrastructure
-    * SaaS Integrations
-    * Internet of Things
-    * Developer Productivity
-  * **Drawbacks**
-    * Debugging
-    * Obscure Infrastructure
-    * Opinionated Development Process
+**API Paradigms**
+
+  - Synchronous:
+    - RPC: gRPC
+    - HTTP: REST
+  - Asynchronous:
+    - Async API call using callbacks
+    - Event-based using message brokers
+      - Competing workers pattern
+      - Fan-out pattern
+
+**API Composition Patterns**
+
+  - Chained pattern
+  - Proxy (API gateway) pattern
+  - Aggregate pattern
+    - Front-end aggregator
+    - Back-end aggregator
+
+
+### Caching
+
+**Caching Patterns**
+
+  - Client-side Caching
+  - Cache-in-the-Middle
+  - Server-side Caching
+    - Embedded Cache
+    - Sidecar Cache
+    - Caching Service
+      - Look-Aside
+      - Read-Through
+      - Write-Through
+      - Write-Back
+      - Write-Around
+  - Hierarchical Caching
+
+**Challenges**
+
+  - Cache Update
+  - Cache Invalidation
+
+
+
+### Stream Processing
+
+_TBD_
+
+
+### Handling Overload
+
+  - Set **per-customer limits**
+  - Implement **client-side throttling**
+  - Define a **criticality** notion for requests
+  - Pay attention to **utilization signals**
+  - First serve **degraded responses** and then errors
+  - Decide when to **retry**
+
+### Addressing Cascading Failures
+
+  - Back off exponentially when retrying
+  - Use deadlines, deadline propagation, and cancellation propagation when retrying to not further overload the system
+  - Upstream services should reject requests rather than overloading the downstream services
+  - Drop some proportion of incoming requests as the backend approaches overload conditions (**load shedding**)
+  - Reduce the amount of work that needs to be performed under overload situation (**graceful degradation**)
+

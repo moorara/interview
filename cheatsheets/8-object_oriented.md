@@ -1,6 +1,6 @@
-# Object-Oriented
+# Object-Oriented Programming (OOP)
 
-## OOP Principles
+## Principles
 
   - **Abstraction**
   - **Encapsulation**

@@ -1,5 +1,9 @@
 # Sorting
 
+**References:**
+
+  - Algorithms, 4th Edition (_Robert Sedgewick and Kevin Wayne_)
+
 ## Sorting Summary
 
 | Algorithm                        | Best Case       | Average Case      | Worst Case      | Space | Remarks                                            |
@@ -27,7 +31,7 @@ public static void sort(Comparable[] a) {
     int min = i;
     for (int j = i + 1; j < N; j++)
       if (a[j] < a[min]) min = j;
-      exchange(a, i, min);
+    exchange(a, i, min);
   }
 }
 ```
@@ -67,11 +71,12 @@ public static void sort(Comparable[] a) {
 }
 ```
 
-  - An **h-sorted** array is **h** interleaved sorted subsequences.
+  - An h-sorted array is h independent sorted subsequences, interleaved together (starting anywhere, taking every h<sup>th</sup> entry yields a sorted subsequence).
   - A g-sorted array remains g-sorted after h-sorting.
-  - Shell sort **h-sorts** array for decreasing sequence of h values. In order to h-sort, we use insertion sort with stride length h.
+  - Shell sort _h-sorts_ array for decreasing sequence of h values. In order to h-sort, we use insertion sort with stride length h.
   - The worst-case number of compares used by Shell sort with 3h+1 increment is O(N<sup>3/2</sup>).
-  - Read more ([1](https://en.wikipedia.org/wiki/Shellsort), [2](https://www.tutorialspoint.com/data_structures_algorithms/shell_sort_algorithm.htm))
+  - Shellsort gains efficiency by making a tradeoff between size and partial order in the subsequences.
+  - Read more [1](https://en.wikipedia.org/wiki/Shellsort), [2](https://www.tutorialspoint.com/data_structures_algorithms/shell_sort_algorithm.htm)
 
 
 ### Merge Sort
@@ -96,7 +101,7 @@ private static void sort(Comparable[] a, Comparable[] aux, int lo, int hi) {
   int mid = lo + (hi - lo) / 2;
   sort(a, aux, lo, mid);
   sort(a, aux, mid + 1, hi);
-  if (a[mid + 1] >= a[mid]) return;  // improvement to help for partially-ordered arrays
+  if (a[mid + 1] >= a[mid]) return;  // improvement for partially-ordered arrays
   merge(a, aux, lo, mid, hi);
 }
 
@@ -123,7 +128,7 @@ public static void sort(Comparable[] a) {
 
 ### Quick Sort
 
-**Partitioning**: the array for some `j` such that:
+**Partitioning** the array for some `j` such that:
   - entry `a[j]` is in place
   - no larger entry to the left of `j`
   - no smaller entry to the right of `j`
@@ -158,6 +163,7 @@ public static void sort(Comparable[] a) {
   sort(a, 0, a.length - 1);
 }
 
+// Quick Select: 
 public static Comparable select(Comparable[] a, int k) {
   shuffle(a);
   int lo = 0, hi = a.length - 1;
@@ -174,14 +180,14 @@ public static Comparable select(Comparable[] a, int k) {
   - **Shuffling** is needed for probabilistic guarantee against the worst case.
   - Quick sort has 39% more compares than Merge sort, but it is faster in practice.
   - Quick sort has too much overhead for tiny sub-arrays (cut-off to insertion sort = 10).
+  - Using an extra array makes partitioning stable, but is not worth the cost.
   - Best choice for pivot item is median, and it can be estimated by taking median of a sample (3 random items).
   - **Quick-select** takes linear time on average.
-  - Using an extra array makes partitioning stable, but is not worth the cost.
 
 
 ### 3-Way Quick Sort
 
-**3-Way Partitioning**: partition array into `3` parts so that:
+**3-Way Partitioning**: partition array into three parts so that:
   - entries between `lt` and `gt` equal to partition item `v`
   - no larger entries to the left of `lt`.
   - no smaller entries to the right of `gt`.
@@ -190,7 +196,7 @@ public static Comparable select(Comparable[] a, int k) {
 // Recursive
 private static void sort(Comparable[] a, int lo, int hi) {
   if (hi <= lo) return;
-  int lt = lo, i = lo+1, gt = hi;
+  int lt = lo, i = lo + 1, gt = hi;
   Comparable v = a[lo];
   while (i <= gt) {
     int cmp = a[i].compareTo(v);
@@ -215,6 +221,7 @@ public static void sort(Comparable[] a) {
 ### Heap Sort
 
 ```java
+// Top-down Reheapification
 private static void sink(Comparable[] a, int k, int n) {
   while (2 * k <= n) {
     int j = 2 * k;
@@ -237,7 +244,7 @@ public static void sort(Comparable[] a) {
 ```
 
   - Heap sort is the only **in-place** sorting algorithm with **NlgN** compares in the **worst-case**.
-  - Heap sort is **optimal for both time and space**, but its inner loop is longer than Quick sort, and it makes poor use of cache memory.
+  - Heap sort is **optimal w.r.t. both time and space**, but its inner loop is longer than Quick sort, and it makes poor use of cache memory.
 
 
 ### Radix Sort

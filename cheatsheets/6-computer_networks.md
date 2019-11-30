@@ -2,7 +2,7 @@
 
 ## Protocol Layers
 
-  - a **protocol** is an agreement between the communicating parties on how communication is to proceed.
+  - A **protocol** is an agreement between the communicating parties on how communication is to proceed.
   - Most networks are organized as a stack of **layers**, each one built upon the one below it. Between each pair of adjacent layers is an interface.
   - Each layer passes data and control information to the layer immediately below it, until the lowest layer is reached.
   - Each instance of a protocol talks virtually to its peer using the protocol (horizontal).
@@ -121,31 +121,25 @@
     - Client and server negotiate a stateful connection by a handshaking procedure to agree on parameters used during the secure session.
 
 
-## IPv4 Addresses
+## Network Addressing
 
-  - **Class A**
-    - Leading bits: 0
-    - Address range: `0.0.0.0` - `127.255.255.255`
-    - Network addressing: 8 bits, 27 networks
-    - Per network addressing: 24 bits, 224 nodes
-  - **Class B**
-    - Leading bits: 10
-    - Address range: `128.0.0.0` - `191.255.255.255`
-    - Network addressing: 16 bits, 214 networks
-    - Per network addressing: 16 bits, 216 nodes
-  - **Class C**
-    - Leading bits: 110
-    - Address range: `192.0.0.0` - `223.255.255.255`
-    - Network addressing: 24 bits, 221 networks
-    - Per network addressing: 8 bits, 28 nodes
-  - **Class D (Multicast)**
-    - Leading bits: 1110
-    - Address range: `224.0.0.0` - `239.255.255.255`
-    - Total addresses: 228 addresses
-  - **Class E (Reserved)**
-    - Leading bits: 1111
-    - Address range: `240.0.0.0` - `255.255.255.255`
-    - Total addresses: 228 addresses
+### Classful Network
+
+| **Class** | **Leading Bits** | **Network Bits** | **Per Network Bits** | **Address Range** | **No. of Networks** | **Address per Network** |
+|-----------|------------------|------------------|----------------------|-------------------|---------------------|-------------------------|
+| A             | `0`    | `8`   | `24`  | `0.0.0.0`   - `127.255.255.255` | 2<sup>7</sup>  | 2<sup>24</sup> |
+| B             | `10`   | `16`  | `16`  | `128.0.0.0` - `191.255.255.255` | 2<sup>14</sup> | 2<sup>16</sup> |
+| C             | `110`  | `24`  | `8`   | `192.0.0.0` - `223.255.255.255` | 2<sup>21</sup> | 2<sup>8</sup>  |
+| D (Multicast) | `1110` | _N/A_ | _N/A_ | `224.0.0.0` - `239.255.255.255` | _N/A_          | _N/A_          |
+| E (Reserved)  | `1111` | _N/A_ | _N/A_ | `240.0.0.0` - `255.255.255.255` | _N/A_          | _N/A_          |
+
+
+### Classless Inter-Domain Routing (CIDR)
+
+  - CIDR is a method for allocating IP addresses and IP routing.
+  - It is introduced to replace the classful network addressing architecture.
+  - CIDR notation is a concise representation of an IP address and its associated routing prefix (mask bits).
+
 
 ### Private Networks
 
@@ -153,14 +147,17 @@
   - Private IP addresses are commonly used for home, office, and enterprise local area networks.
   - IPv4 Private Address Spaces:
     - 24-bit block:
-      - Address range: `10.0.0.0` - `10.255.255.255`
       - single class A network
+      - CIDR: `10.0.0.0/8`
+      - Address range: `10.0.0.0` - `10.255.255.255`
     - 20-bit block:
-      - Address range: `172.16.0.0` - `172.31.255.255`
       - 16 class B networks
+      - CIDR: `172.16.0.0/12`
+      - Address range: `172.16.0.0` - `172.31.255.255`
     - 16-bit block:
-      - Address range: `192.168.0.0` - `192.168.255.255`
       - 256 class C networks
+      - CIDR: `192.168.0.0/16`
+      - Address range: `192.168.0.0` - `192.168.255.255`
 
 
 ## Network Address Translation
@@ -179,7 +176,6 @@
       - Port Address Translation is another type of dynamic NAT which can map multiple private IP addresses to a single public IP address.
       - When a client from inside network communicate to a host in the internet, the router changes the source port number with another.
       - When the router receives from internet, it will refer the port mappings table and forward the data packet to the original sender.
-
   - Port forwarding is an application of network address translation (NAT).
   - It redirects a communication request from one IP address and port number to another while the packets are traversing a network gateway.
   - It is used to make services on a host residing on a protected or internal network available to hosts on the other side of gateway (external network).

@@ -1,5 +1,9 @@
 # Algorithms
 
+**References:**
+
+  - Introduction to Algorithms (_Thomas H. Cormen, Charles E. Leiserson, Ronald Rivest, Clifford Stein_)
+
 ## Complexity Classes
 
   * **P**
@@ -133,32 +137,33 @@ for some constant c < 1 and all sufficiently large n, then  T(n) = Θ(f(n))
   - Each solution has a value, and we are interested in a solution with the optimal (minimum or maximum) value.
 
 A problem must have two key elements in order for dynamic programming to apply:
-  - **Optimal sub-structure:** an optimal solution to the problem incorporates optimal solutions to related subproblems
+
+  - **Optimal substructure:** an optimal solution to the problem incorporates optimal solutions to the related subproblems.
   - **Overlapping subproblems:** A recursive algorithm revisits the same subproblems over and over (the subproblems share sub-subproblems).
 
+**Optimal Substructure**
 
   1. A solution to the problem consists of making a choice. Making this choice leaves one or more subproblems to be solved.
   2. We assume that for a given problem, we are given the choice that leads to an optimal solution.
   3. Given this choice, we determine the subproblems and the resulting space of subproblems.
   4. The solution to the problem must have optimal solutions to the subproblems.
 
+**Overlapping Subproblems**
 
   1. Implement a simple recursive algorithm for the problem using the optimal sub-structure.
   2. **Top-down with memorization**: modify the recursive algorithm to save the result of each subproblem and do not solve the same subproblems again.
   3. **Bottom-up**: solve the subproblems from the smallest size to the largest, and save the solution (a notion of size for the problem is required).
      Each subproblem is solved only once, and when solving a subproblem, all of the smaller subproblems are already solved.
 
+**Subproblem Graph**
 
-  - The bottom-up approach often has much better constant factors.
-  - The top-down method with memorization for dynamic programming is a DFS of the subproblem graph.
-  - The bottom-up dynamic programming visits the vertices of the subproblem graph in an order that is a reverse topological sort.
-
-
-**Subproblem Graph:**
   - Each vertex corresponds to a distinct subproblem.
   - The choices for a subproblem are the outgoing edges for that subproblem.
   - The running time of a dynamic programming algorithm is the sum of the times needed to solve each subproblem.
   - Typically, the time to compute the solution to a subproblem is proportional to the outgoing degree of the corresponding vertex.
+  - The top-down method with memorization for dynamic programming is a DFS of the subproblem graph.
+  - The bottom-up approach often has much better constant factors.
+  - The bottom-up dynamic programming visits the vertices of the subproblem graph in an order that is a reverse topological sort.
 
 
 ### Greedy Algorithms

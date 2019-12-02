@@ -111,7 +111,7 @@
 
 ### Handling Overload
 
-  - Set **per-customer limits**
+  - Set **per-customer limits (quotas)**
   - Implement **client-side throttling**
   - Define a **criticality** notion for requests
   - Pay attention to **utilization signals**

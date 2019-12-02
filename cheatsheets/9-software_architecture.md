@@ -72,14 +72,14 @@
 
 **API Composition Patterns**
 
-  - Chained pattern
-  - Proxy (API gateway) pattern
-  - Aggregate pattern
-    - Front-end aggregator
-    - Back-end aggregator
+  - Chained Pattern
+  - Proxy Pattern (API Gateway)
+  - Aggregate Pattern
+    - Front-end Aggregator
+    - Back-end Aggregator
 
 
-### Caching
+## Caching
 
 **Caching Patterns**
 
@@ -102,11 +102,12 @@
   - Cache Invalidation
 
 
+## Stream Processing
 
-### Stream Processing
+  - Stream processing is a computing paradigm for processing and querying continuous streams of data and events.
 
-_TBD_
 
+## Practices
 
 ### Handling Overload
 

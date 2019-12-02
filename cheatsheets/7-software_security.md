@@ -49,11 +49,11 @@
 
 ## Message Authentication
 
-  - **Hash Functions:**
+  - **Hash Functions**
     - MD5, MD6
     - SHA-1, SHA-256, SHA-512
     - RIPEMD, RIPEMD-128, RIPEMD-256
-  - **Message Authentication Code (MAC):**
+  - **Message Authentication Code (MAC)**
     - Hashed Message Authentication Code (HMAC)
 
 
@@ -106,48 +106,6 @@
     - A secure communication protocol has forward secrecy property if compromise of long-term keys does not compromise past session keys.
 
 
-## Memory Attacks
-
-  - Buffer Overflow
-    - Stack-based
-    - Heap-based
-  - Integer Overflow
-  - Read Overflow
-  - Stale Memory Attacks
-  - Format String Attacks
-
-
-## Web Attacks
-
-  - **SQL Injection**
-    - A technique where attacker can inject malicious SQL commands into an SQL statement, via web page input.
-    - Defense:
-      - Validation: Blacklisting, Whitelisting, ...
-      - Sanitization: Escaping, Prepared Statements
-  - **Session Hijacking**
-    - The exploitation of a valid session by stealing a cookie and impersonating a  legitimate user to access information or services in a server.
-    - Defense:
-      - Cookies should be unpredictable, randomly chosen, and sufficiently long
-      - Application can also require separate correlating information to accept requests.
-      - Have timeout for sessions and delete them once the session ends.
-  - **Cross-Site Scripting (XSS)**
-    - Persistent (Stored):
-      - The data provided by the attacker is saved by the server, and then permanently returned to other users without html escaping.
-    - Non-persistent (Reflected):
-      - The data provided by a web client, is used immediately by server-side scripts to display a page to user, without sanitizing the request.
-      - A reflected attack is typically delivered via email or a neutral web site pointing to a trusted site but containing the XSS vector.
-    - XSS attacks exploit the trust a client browser has in data sent from a legitimate website.
-    - Defense:
-      - Validation: Whitelisting headers, cookies, query strings, form fields, etc.
-      - Sanitization: remove all executable portions of user-provided content that will appear in html pages.
-  - **Cross-Site Request Forgery (XSRF/CSRF)**
-    - Malicious exploit of a website whereby unauthorized requests are sent from a user that the website trusts.
-    - XSRF attacks exploit the trust a legitimate website has in data sent from the client browser.
-    - Defense:
-      - Secretized Links: include a secret in every link/form via hidden fields, custom headers, or directly encoded in URL.
-      - Use the REFERER header it has been set by client's browser: trust requests from pages a user can legitimately reach.
-
-
 ## Security by Design Principles
 
   - Minimize attack surface area
@@ -169,4 +127,17 @@
   - Network locality is not sufficient for deciding trust in a network.
   - Every user, device, and/or agent is **authenticated** and **authorized**.
   - Policies must be dynamic and calculated from many sources of data.
+
+
+## Attacks
+
+### Memory Attacks
+
+  - Buffer Overflow
+    - Stack-based
+    - Heap-based
+  - Integer Overflow
+  - Read Overflow
+  - Stale Memory Attacks
+  - Format String Attacks
 

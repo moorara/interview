@@ -22,7 +22,6 @@
     - fetch-and-add
     - compare-and-swap
 
-
   - Mutual Exclusions:
     - Spin lock
     - Lock (Mutex)
@@ -41,15 +40,12 @@
       - Spatial Locality
       - Temporal Locality
 
-
   - Memory:
     - SRAM: static, 6 transistors per bit, fast, less power, more expensive
     - DRAM: dynamic, 1 transistor + 1 capacitor per bit, slow, requires refreshing
 
-
   - Storage Hierarchies:
     - Registers  -->  Cache  -->  RAM  -->  SSD  -->  HDD
-
 
   - Parallelism:
     - Instruction-Level:

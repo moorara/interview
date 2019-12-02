@@ -247,6 +247,7 @@ If we have a table of size M, and the hash value is an int between -2<sup>31</su
       - Array size (`M`) must be greater than number of key-value pairs (`N`).
       - A typical choice is `M ~ 2N` (load factor is `α = N/M ~ 1/2`).
       - Linear probing has a great spatial locality and, thus, better cache performance.
+      - Using linear probing, long clusters are more likely to increase in length.
     - **Quadratic Probing**
       - When a collision occurs at index h, the next indices are: h+1<sup>2</sup>, h+2<sup>2</sup>, h+3<sup>2</sup>, ...
       - Quadratic probing better avoids the clustering problem that can occur with linear probing.

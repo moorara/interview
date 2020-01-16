@@ -27,5 +27,7 @@ A collection of notes and resources for beating technical interviews for softwar
   - [Statistics](./cheatsheets/20-statistics.md)
   - [Artificial Intelligence](./cheatsheets/21-artificial_intelligence.md)
   - [Machine Learning](./cheatsheets/22-machine_learning.md)
-  - [Questions](./cheatsheets/23-questions.md)
+  - [Problem Solving](./cheatsheets/23-problem-solving.md)
+  - [Cultural-Behavioral](./cheatsheets/24-cultural-behavioral.md)
+  - [Candidate Questions](./cheatsheets/25-candidate-questions.md)
 

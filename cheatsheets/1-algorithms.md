@@ -127,7 +127,7 @@ for some constant ε > 0, and if af(n/b) <= c(f(n))
 for some constant c < 1 and all sufficiently large n, then  T(n) = Θ(f(n))
 
 
-## Misc
+## Algorithm Design
 
 
 ### Divide-and-Conquer

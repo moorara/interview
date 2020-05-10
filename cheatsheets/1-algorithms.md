@@ -8,13 +8,23 @@
 
   * **P**
     - All **decision/decidable** problems that can be solved by a **deterministic Turing machine** in polynomial time.
+    - Examples:
+      - Linear Search: O(n)
+      - Binary Search: O(lg<sup>n</sup>)
+      - Merge Sort: O(nlg<sup>n</sup>)
+      - Matrix Multiplication: O(n<sup>3</sup>)
   * **NP**
     - All **decision/decidable** problems that can be solved by a **non-deterministic Turing machine** (non-deterministic polynomial time).
     - All **decision/decidable** problems for which a given solution (yes-answer) can be verified in polynomial time.
     - P problems are a subset of NP problems (`P ⊆ NP`).
+    - Examples:
+      - Traveling Salesman Problem: O(2<sup>n</sup>)
+      - Knapsack Problem: O(2<sup>n</sup>)
+      - Graph Coloring Problem: O(2<sup>n</sup>)
   * **NP-Complete**
-    - A **decision/decidable** problem in NP is NP-Complete if every other problem in NP can be reduced to it in polynomial time.
-    * NP-complete problems are the most difficult problems in NP.
+    - A **decision/decidable** problem in NP is NP-Complete (`NP-Complete ⊆ NP`) if every other problem in NP can be reduced to it in polynomial time.
+    - NP-complete problems are the most difficult problems in NP.
+    - Examples:
       - SAT Problem
       - Subset Sum Problem
       - Knapsack Decision Problem
@@ -25,7 +35,8 @@
   * **NP-Hard**
     - A **problem** is NP-Hard if all other problems in NP can be reduced to it in polynomial time.
     - NP-hard problems do not have to be in NP, and they do not have to be decision problems.
-    - NP-Hard problems are at least as hard as the hardest problems in NP.
+    - NP-Hard problems are at least as hard as the hardest problems in NP (`NP-Complete ⊆ NP-Hard`).
+    - Examples:
       - Knapsack Optimization Problem
       - Traveling Salesman (Optimization) Problem
       - Graph Coloring Optimization Problem

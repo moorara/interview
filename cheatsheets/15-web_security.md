@@ -49,6 +49,7 @@
     - Redirect URI
     - Scope
     - Consent
+    - Authorization Code
   - **Endpoints**
     - Authorization Endpoint
     - Token Endpoint

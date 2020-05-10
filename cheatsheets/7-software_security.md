@@ -10,7 +10,7 @@
     - Non-repudiation
 
 
-## Cryptography
+## Cryptography Secrecy
 
   - **Perfect Secrecy:**
     - Observing the ciphertext should not reveal any additional information about the distribution of the plaintext.
@@ -49,12 +49,12 @@
 
 ## Message Authentication
 
-  - **Hash Functions**
-    - MD5, MD6
-    - SHA-1, SHA-256, SHA-512
-    - RIPEMD, RIPEMD-128, RIPEMD-256
-  - **Message Authentication Code (MAC)**
-    - Hashed Message Authentication Code (HMAC)
+  - **Hash-based Message Authentication Code (HMAC)**
+    - HMAC is a function that receives a cryptographic **secret key** and a **hash function**
+    - Hash Functions:
+      - MD5, MD6
+      - SHA-1, SHA-256, SHA-512
+      - RIPEMD, RIPEMD-128, RIPEMD-256
 
 
 ## Internet Security

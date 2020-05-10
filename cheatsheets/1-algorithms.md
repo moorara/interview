@@ -44,21 +44,17 @@
 
 ## Algorithm Complexity
 
-  - Asymptotic Lower Bound: `f(n) = Ω(g(n)) --> ∃c,n0     >= 0  s.t  ∀n >= n0 : 0 <= cg(n) <= f(n)`
-  - Asymptotic Upper Bound: `f(n) = O(g(n)) --> ∃c,n0     >= 0  s.t  ∀n >= n0 : 0 <= f(n) <= cg(n)`
-  - Asymptotic Tight Bound: `f(n) = Θ(g(n)) --> ∃c1,c2,n0 >= 0  s.t  ∀n >= n0 : 0 <= c1g(n) <= f(n) <= c2g(n)`
-
-
-  - `f(n) = ω(g(n))  -->  ∃ c,n0 >= 0  s.t  ∀ n >= n0 :  0 <= cg(n) < f(n)`
-  - `f(n) = o(g(n))  -->  ∃ c,n0 >= 0  s.t  ∀ n >= n0 :  0 <=  f(n) < cg(n)`
-
-
-  - f(n) = Θ(g(n))  iff  g(n) = Θ(f(n))
-  - f(n) = O(g(n))  iff  g(n) = Ω(f(n))
-  - f(n) = Ω(g(n))  and  g(n) = Ω(h(n))  -->  f(n) = Ω(h(n))
-  - f(n) = O(g(n))  and  g(n) = O(h(n))  -->  f(n) = O(h(n))
-  - f(n) = Θ(g(n))  and  g(n) = Θ(h(n))  -->  f(n) = Θ(h(n))
-  - f(n) = Θ(g(n))  iff  f(n) = Ω(g(n))  and  f(n) = O(g(n))
+  - Asymptotic Lower Bound: f(n) = Ω(g(n)) --> ∃c,n<sub>0</sub> >= 0 s.t ∀n >= n<sub>0</sub> : 0 <= cg(n) <= f(n)
+  - Asymptotic Upper Bound: f(n) = O(g(n)) --> ∃c,n<sub>0</sub> >= 0 s.t ∀n >= n<sub>0</sub> : 0 <= f(n) <= cg(n)
+  - Asymptotic Tight Bound: f(n) = Θ(g(n)) --> ∃c<sub>1</sub>,c<sub>2</sub>,n<sub>0</sub> >= 0 s.t ∀n >= n<sub>0</sub> : 0 <= c<sub>1</sub>g(n) <= f(n) <= c<sub>2</sub>g(n)
+  - f(n) = ω(g(n)) --> ∃ c,n<sub>0</sub> >= 0 s.t ∀ n >= n<sub>0</sub> : 0 <= cg(n) < f(n)
+  - f(n) = o(g(n)) --> ∃ c,n<sub>0</sub> >= 0 s.t ∀ n >= n<sub>0</sub> : 0 <= f(n) < cg(n)
+  - f(n) = Θ(g(n)) iff g(n) = Θ(f(n))
+  - f(n) = O(g(n)) iff g(n) = Ω(f(n))
+  - f(n) = Ω(g(n)) and g(n) = Ω(h(n)) --> f(n) = Ω(h(n))
+  - f(n) = O(g(n)) and g(n) = O(h(n)) --> f(n) = O(h(n))
+  - f(n) = Θ(g(n)) and g(n) = Θ(h(n)) --> f(n) = Θ(h(n))
+  - f(n) = Θ(g(n)) iff f(n) = Ω(g(n)) and f(n) = O(g(n))
 
 
   - Using **O-notation**, we can often describe the running time of an algorithm merely by inspecting the algorithm’s overall structure.

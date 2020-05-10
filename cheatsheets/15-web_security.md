@@ -50,6 +50,7 @@
     - Scope
     - Consent
     - Authorization Code
+    - Client ID and Client Secret
   - **Endpoints**
     - Authorization Endpoint
     - Token Endpoint

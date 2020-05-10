@@ -86,7 +86,6 @@
 
   - A structural analysis on **worst-case** running time of an algorithm gives an **upper bound** for the algorithm.
   - A structural analysis on **best-case** running time of an algorithm gives a **lower bound** for the algorithm.
-
     1. Having an algorithm, assign a cost c<sub>i</sub> to each statement besides the running times t<sub>i</sub> for that statement.
     2. Calculate a sum over c<sub>i</sub>t<sub>i</sub> terms for all statements.
 

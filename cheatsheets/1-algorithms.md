@@ -72,14 +72,12 @@
 
 ### Math Summary
 
-  - 1 + 2 + 3 + ... + n      =  (1/2)n(n+1)
-  - 1<sup>2</sup> + 2<sup>2</sup> + 3<sup>2</sup> + ... + n<sup>2</sup>  =  (1/6)n(n+1)(2n+1)
-  - 1<sup>3</sup> + 2<sup>3</sup> + 3<sup>3</sup> + ... + n<sup>3</sup>  =  (1/4)n<sup>2</sup>(n+1)<sup>2</sup>
-  - 1  + x<sup>1</sup> + x<sup>2</sup> + ... + x<sup>n</sup>  =  (x<sup>n+1</sup> - 1) / (x - 1)
-  - 1  + x<sup>1</sup> + x<sup>2</sup> + x<sup>3</sup> + ...  =  1 / (1 -x) if |x| < 1
-  - 1 + (1/2) + ... + (1/n)  =  ln(n) + O(1)
-
-
+  - 1 + 2 + 3 + ... + n = (1/2)n(n+1)
+  - 1<sup>2</sup> + 2<sup>2</sup> + 3<sup>2</sup> + ... + n<sup>2</sup> = (1/6)n(n+1)(2n+1)
+  - 1<sup>3</sup> + 2<sup>3</sup> + 3<sup>3</sup> + ... + n<sup>3</sup> = (1/4)n<sup>2</sup>(n+1)<sup>2</sup>
+  - 1  + x<sup>1</sup> + x<sup>2</sup> + ... + x<sup>n</sup> = (x<sup>n+1</sup> - 1) / (x - 1)
+  - 1  + x<sup>1</sup> + x<sup>2</sup> + x<sup>3</sup> + ... = 1 / (1 -x) if |x| < 1
+  - 1 + (1/2) + ... + (1/n) = ln(n) + O(1)
   - e<sup>x</sup> = 1 + x + (x<sup>2</sup>/2!) + (x<sup>3</sup>/3!) + ...  -->  x + 1 <= e<sup>x</sup> <= x<sup>2</sup> + x + 1
   - ln(x + 1) = x - (x<sup>2</sup>/2) + (x<sup>3</sup>/3) - ...  -->  x / (x + 1) <= ln(x + 1) <= x
 

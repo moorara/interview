@@ -50,10 +50,10 @@
     - [Abstract Factory](https://en.wikipedia.org/wiki/Abstract_factory_pattern)
     - [Factory Method](https://en.wikipedia.org/wiki/Factory_method_pattern)
     - [Builder](https://en.wikipedia.org/wiki/Builder_pattern)
+    - [Singleton](https://en.wikipedia.org/wiki/Singleton_pattern)
     - [Multiton](https://en.wikipedia.org/wiki/Multiton_pattern)
     - [Object Pool](https://en.wikipedia.org/wiki/Object_pool_pattern)
     - [Prototype](https://en.wikipedia.org/wiki/Prototype_pattern)
-    - [Singleton](https://en.wikipedia.org/wiki/Singleton_pattern)
     - [Dependency Injection](https://en.wikipedia.org/wiki/Dependency_injection)
   - **Structural Patterns:**
     - [Adapter (Wrapper)](https://en.wikipedia.org/wiki/Adapter_pattern)

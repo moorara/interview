@@ -37,15 +37,15 @@
     - Stateless
     - Independently Changeable
     - Independently Deployable
-  - **Resilience**
-    - Multi-Instance
+  - **Resilient**
+    - High Availabiltiy
     - Design For Failure
       - Fail Fast
       - Timeout
       - Retry
       - Circuit Breaking
-    - Degrade Functionality
-    - Default Functionality
+    - Degraded functionality
+    - Default functionality
   - **Observable**
     - Centralized Logging
     - Centralized Metrics

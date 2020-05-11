@@ -72,8 +72,8 @@
 
 **API Composition Patterns**
 
-  - Chained Pattern
   - Proxy Pattern (API Gateway)
+  - Chained Pattern
   - Aggregate Pattern
     - Front-end Aggregator
     - Back-end Aggregator

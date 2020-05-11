@@ -56,13 +56,13 @@
     - [Prototype](https://en.wikipedia.org/wiki/Prototype_pattern)
     - [Dependency Injection](https://en.wikipedia.org/wiki/Dependency_injection)
   - **Structural Patterns:**
-    - [Adapter (Wrapper)](https://en.wikipedia.org/wiki/Adapter_pattern)
-    - [Bridge](https://en.wikipedia.org/wiki/Bridge_pattern)
     - [Composite](https://en.wikipedia.org/wiki/Composite_pattern)
+    - [Bridge](https://en.wikipedia.org/wiki/Bridge_pattern)
+    - [Adapter](https://en.wikipedia.org/wiki/Adapter_pattern)
     - [Decorator](https://en.wikipedia.org/wiki/Decorator_pattern)
     - [Facade](https://en.wikipedia.org/wiki/Facade_pattern)
-    - [Flyweight](https://en.wikipedia.org/wiki/Flyweight_pattern)
     - [Proxy](https://en.wikipedia.org/wiki/Proxy_pattern)
+    - [Flyweight](https://en.wikipedia.org/wiki/Flyweight_pattern)
   - **Behavioral Patterns:**
     - [Chain of Responsibility](https://en.wikipedia.org/wiki/Chain_of_responsibility_pattern)
     - [Command](https://en.wikipedia.org/wiki/Command_pattern)

@@ -12,14 +12,14 @@ Sample space `S` the set of all possible outcomes/events.
 ```
 P(A and B)  =  P(A)P(B)                   if A and B are independent
 P(A xor B)  =  P(A) + P(B)                if A and B are mutually exclusive
-P(A  or B)  =  P(A) + P(B) - P(A and B)   if A and B are not mutually exclusive
+P(A or B)   =  P(A) + P(B) - P(A and B)   if A and B are not mutually exclusive
 P(A | B)    =  P(A and B) / P(B)
 P(A and B)  =  P(A|B)P(B)  =  P(B|A)P(A)
 ```
 
 ```
-Permutation:  P(n, r)  =  n! / (n - k)!
-Combination:  C(n, r)  =  n! / (n - k)! k!
+Permutation:  P(n, k)  =  n! / (n - k)!
+Combination:  C(n, k)  =  n! / (n - k)! k!
 ```
 
 

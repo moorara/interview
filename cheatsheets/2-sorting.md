@@ -249,7 +249,7 @@ public static void sort(Comparable[] a) {
 
 ### Radix Sort
 
-Key-indexed counting is efficient for sorting keys which are integers between `0` and `R - 1`, and `R` is a small number.
+Key-indexed counting is efficient for sorting keys with integer digits between `0` and `R-1` (_R_ is a small number).
 
 ```java
 public static void sort_lsd(String[] a, int W) {  // fixed-length W strings

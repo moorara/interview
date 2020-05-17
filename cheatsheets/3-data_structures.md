@@ -43,7 +43,7 @@
     - Weighted Graph
 
 
-## Set
+## Sets
 
 ### Bloom Filter
 
@@ -57,7 +57,7 @@
       - Otherwise if all those positions are set to `1`, the element may be or not be in the set.
   - For a bit array of `m` bits and `n` elements, the optimmum number of hash functions is `k = (m/n)ln2`.
 
-## List
+## Lists
 
 ### Skip-List
 
@@ -67,7 +67,7 @@
     - The bottom layer is a regular linked-list.
     - Each higher layer is a _fast lane_ for the list below.
 
-## Heap
+## Heaps
 
   - Heaps are **tree-based** abstract data types for implementing priority queues.
   - Max Heap property, the keys of parent nodes are greater than or equal to keys of children and the highest key is in the root.
@@ -85,7 +85,7 @@
 | Pairing   | Θ(1)<sup>*</sup> | Θ(lgN)<sup>*</sup> | * amortized |
 
 
-## Symbol Table
+## Symbol Tables
 
   - Keys are **immutable** and **distinct** for symbol table.
   - **Key**  is

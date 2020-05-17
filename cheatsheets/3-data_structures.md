@@ -137,7 +137,7 @@ public interface ST<Key, Value> {
 | Red-Black | 2lgN           | 2lgN           | 2lgN           | lgN*             | lgN*             | lgN*             |
 
   - AVL trees maintain a more rigid balance than red-black trees.
-    Lookup in an AVL tree is typically faster, but this comes at the cost of slower insertion and deletion.
+  - Lookup in an AVL tree is typically faster, but this comes at the cost of slower insertion and deletion.
 
 
 ### Binary Search Tree

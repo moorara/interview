@@ -247,12 +247,14 @@ public static void sort(Comparable[] a) {
   - Heap sort is **optimal w.r.t. both time and space**, but its inner loop is longer than Quick sort, and it makes poor use of cache memory.
 
 
-### Radix Sort
+### Radix Sorts
 
 Key-indexed counting is efficient for sorting keys with integer digits between `0` and `R-1` (_R_ is a small number).
 
+#### LSD (_Least Significant Digit_)
+
 ```java
-public static void sort_lsd(String[] a, int W) {  // fixed-length W strings
+public static void sort(String[] a, int W) {  // fixed-length W strings
   int R = 256;  // radix R
   int N = a.length;
   String[] aux = new String[N];
@@ -270,6 +272,8 @@ public static void sort_lsd(String[] a, int W) {  // fixed-length W strings
 }
 ```
 
+#### MSD (_Most Significant Digit_)
+
 ```java
 private static int charAt(String s, int d) {
   if (d < s.length())
@@ -278,7 +282,7 @@ private static int charAt(String s, int d) {
     return -1;
 }
 
-private static void sort_msd(String[] a, String[] aux, int lo, int hi, int d) {  // variable-length strings
+private static void sort(String[] a, String[] aux, int lo, int hi, int d) {  // variable-length strings
   if (hi <= lo)
     return;
   int[] count = new int[R + 2];
@@ -296,7 +300,7 @@ private static void sort_msd(String[] a, String[] aux, int lo, int hi, int d) { 
 
 public static void sort_msd(String[] a) {
   aux = new String[a.length];
-  sort_msd(a, aux, 0, a.length - 1, 0);
+  sort(a, aux, 0, a.length - 1, 0);
 }
 ```
 
@@ -318,7 +322,7 @@ public static void sort_insertion(String[] a, int lo, int hi, int d) {
 ```
 
 
-### 3-Way Radix Quick Sort
+#### 3-Way Radix Quick Sort
 
 ```java
 private static int charAt(String s, int d) {

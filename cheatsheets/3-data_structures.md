@@ -324,10 +324,10 @@ If we have a table of size M, and the hash value is an int between -2<sup>31</su
 
 ## Graphs
 
-  - **Graph**: set of vertices connected pairwise by edges.
-  - **Digraph**: set of vertices connected pairwise by directed edges.
-  - **Path**: sequence of vertices connected by edges.
-  - **Cycle**: path whose first and last vertices are the same.
+  - **Graph**: a set of vertices connected pairwise by edges.
+  - **Digraph**: a set of vertices connected pairwise by directed edges.
+  - **Path**: a sequence of vertices connected by edges.
+  - **Cycle**: a path whose first and last vertices are the same.
   - **DAG**: a directed graph which has no cycle.
   - **Connectivity**: Two vertices are connected if there is a path between them (equivalence relation: _reflexive_, _symmetric_, and _transitive_).
   - **Strong-Connectivity**: `v` and `w` are strongly-connected if there is a directed path from `v` to `w` and a directed path from `w` to `v`. (equivalence relation)

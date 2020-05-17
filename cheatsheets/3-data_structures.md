@@ -267,17 +267,17 @@ If we have a table of size M, and the hash value is an int between -2<sup>31</su
 ### Range Tree
 
   - Range tree is a data structure for storing **points**.
-  - It is optimized for querying and finding _which points fall within a given interval_.
+  - It is optimized for querying and finding which points fall within a given interval.
 
 ### Segment Tree
 
   - Segment tree is a data structure for storing **intervals**.
-  - It is optimized for querying and finding _which intervals contain a given point_.
+  - It is optimized for querying and finding which intervals contain a given point.
 
 ### Interval Tree
 
   - Interval tree is a data structure for storing **intervals**.
-  - It is optimized for querying and finding _which intervals overlap with a given interval_.
+  - It is optimized for querying and finding which intervals overlap with a given interval.
   - Interval tree is implemented using a self-balancing binary search tree (_AVL_, _Red-Black_, ...).
     - Each node contains left and right endpoints of an interval, and the left endpoint is the key of node.
     - Each node also stores the maximum endpoint in sub-tree rooted at node.

@@ -48,7 +48,7 @@
 ### Bloom Filter
 
   - A Bloom filter is a space-efficient _probabilistic_ set data structure.
-  _ _False positives are possible, but false negatives are not.
+  - False positives are possible, but false negatives are not.
   - **Implementation:**
     - An empty Bloom filter is a _bit array_ of `m` bits, all set to `0`.
     - To add an element, `k` distinct hash functions each maps the element to a position in the array and all such positions are set to `1`.

@@ -256,7 +256,7 @@ public static void sort_lsd(String[] a, int W) {  // fixed-length W strings
   int R = 256;  // radix R
   int N = a.length;
   String[] aux = new String[N];
-  for (int d = W - 1; d >= 0; d--) {
+  for (int d = W - 1; d >= 0; d--) {  // counting sort (stable)
     int[] count = new String[R + 1];
     for (int i = 0; i < N; i++)
       count[a[i].charAt(d) + 1]++;
@@ -268,7 +268,9 @@ public static void sort_lsd(String[] a, int W) {  // fixed-length W strings
       a[i] = aux[i];
   }
 }
+```
 
+```java
 private static int charAt(String s, int d) {
   if (d < s.length())
     return s.charAt(d);

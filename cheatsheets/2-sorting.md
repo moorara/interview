@@ -256,16 +256,16 @@ public static void sort_lsd(String[] a, int W) {  // fixed-length W strings
   int R = 256;  // radix R
   int N = a.length;
   String[] aux = new String[N];
-  for (int d = W - 1; d >= 0; d--) {  // counting sort (stable)
-    int[] count = new String[R + 1];
-    for (int i = 0; i < N; i++)
+  for (int d = W-1; d >= 0; d--) {                // counting sort (stable)
+    int[] count = new int[R+1];
+    for (int i = 0; i < N; i++)                   // compute frequency counts
       count[a[i].charAt(d) + 1]++;
-    for (int r = 0; r < R; r++)
-      count[r + 1] += count[r];
+    for (int r = 0; r < R; r++)                   // compute cumulative counts
+      count[r+1] += count[r];
     for (int i = 0; i < N; i++)
-      aux[count[a[i].charAt(d)]++] = a[i];
+      aux[count[a[i].charAt(d)]++] = a[i];        // move data to aux
     for (int i = 0; i < N; i++)
-      a[i] = aux[i];
+      a[i] = aux[i];                              // copy back aux to a
   }
 }
 ```

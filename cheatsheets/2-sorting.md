@@ -163,7 +163,7 @@ public static void sort(Comparable[] a) {
   sort(a, 0, a.length - 1);
 }
 
-// Quick Select: 
+// Quick Select
 public static Comparable select(Comparable[] a, int k) {
   shuffle(a);
   int lo = 0, hi = a.length - 1;

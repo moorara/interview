@@ -388,7 +388,7 @@ private void dfs(Graph G, int s) {
 ```java
 public class DepthFirstSearch {
   private boolean[] visited;
-  private int count;
+  private int count;  // no. of vertices connected to s
 
   public void DepthFirstSearch(Graph G, int s) {
     visited = new boolean[G.V()];

@@ -572,21 +572,20 @@ public class DirectedCycle {
   private void dfs(Digraph G, int v) {
     visited[v] = true;
     onStack[v] = true;
-    for (int w : G.adj(v))
-      if (cycle != null) {
-        // Cycle already detected
+    for (int w : G.adj(v)) {
+      if (cycle != null) {  // short circuit if a cycle already found
         return;
       } else if (!visited[w]) {
         edgeTo[w] = v;
         dfs(G, w);
-      } else if (onStack[w]) {
-        // Cycle found
+      } else if (onStack[w]) {  // cycle detected
         cycle = new Stack<Integer>();
         for (int x = v; x != w; x = edgeTo[x])
           cycle.push(x);
         cycle.push(w);
         cycle.push(v);
       }
+    }
     onStack[v] = false;
   }
 }

@@ -631,7 +631,9 @@ public class DepthFirstOrder {
     return reversePost;
   }
 }
+```
 
+```java
 public class Topological {
   private Iterable<Integer> order;
 

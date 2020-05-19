@@ -847,21 +847,36 @@ public class WeightedQuickUnionFind {
 
 ```java
 public class KruskalMST {
-  private Queue<Edge> mst;
+  private double weight;    // weight of MST
+  private Queue<Edge> mst;  // edges in MST
 
   public KruskalMST(EdgeWeightedGraph G) {
     mst = new Queue<Edge>();
 
-    MinPQ<Edge> pq = new MinPQ<Edge>(G.edges());
+    MinPQ<Edge> pq = new MinPQ<Edge>();
+    for (Edge e : G.edges()) {
+      pq.insert(e);
+    }
+
     UnionFind uf = new UnionFind(G.V());
 
     while (!pq.isEmpty() && mst.size() < G.V() - 1) {
       Edge e = pq.delete();                // get minimum-weight edge
       int v = e.either(), w = e.other(v);
-      if (uf.connected(v, w)) continue;    // ineligible edge
-      uf.union(v, w);                      // merge components
-      mst.enqueue(e);                      // add edge to mst
+      if (!uf.connected(v, w)) {           // eligible edge
+        uf.union(v, w);                    // merge components
+        mst.enqueue(e);                    // add edge to MST
+        weight += e.weight();              // update MST weight
+      }
     }
+  }
+
+  public double weight() {
+    return weight;
+  }
+
+  public Iterable<Edge> edges() {
+    return mst;
   }
 }
 ```

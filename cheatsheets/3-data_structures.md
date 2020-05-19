@@ -594,7 +594,7 @@ public class DirectedCycle {
 
 #### Topological Sort
 
-  - A **directed** graph has a topological order if and only if no directed cycle exists (**DAG**).
+  - A **directed** graph has a topological order if and only if it is a **DAG** (no directed cycle exists).
   - The _reverse DFS post-order_ of a DAG is a topological order.
   - DFS can topologically sort a DAG in time proportional to `V+E`.
   - Topological sort gives an order to redraw DAG so all edges point in one direction (upwards, downwards, or outwards).

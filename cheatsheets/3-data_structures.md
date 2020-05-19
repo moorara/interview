@@ -662,7 +662,7 @@ public class Topological {
 
 #### Strongly-Connected Components
 
-  - **Strongly-connected components** in directed graph G are same as in the reverse of G (G<sup>R</sup>).
+  - <span style="color:blue">**Strongly-connected components** in directed graph G are same as in the reverse of G (G<sup>R</sup>).</span>
   - Algorithms:
     - **Kosaraju** computes the strongly-connected components of a digraph in time proportional to `V+E`.
       - Phase 1: run DFS on G<sup>R</sup> to compute reverse post-order.
@@ -835,7 +835,7 @@ public class WeightedQuickUnionFind {
     - Tree: connected and acyclic
     - Spanning: includes all of the vertices
     - Minimum: sum of the edge wights are minimum
-  - Given any cut in an edge-weighted graph, the crossing edge of minimum weight is in the MST of the graph.
+  - <span style="color:blue">Given any cut in an edge-weighted graph, the crossing edge of minimum weight is in the MST of the graph.</span>
   - Greedy MST algorithm:
     1. Start with all edges colored gray.
     1. Find a cut with no black crossing edge, and color its minimum-weight edge black.

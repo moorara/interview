@@ -743,7 +743,7 @@ public class QuickUnionFind {
   private int count;  // number of components
   private int[] id;
 
-  public UnionFind(int N) {
+  public QuickUnionFind(int N) {
     count = N;
     id = new int[N];
 

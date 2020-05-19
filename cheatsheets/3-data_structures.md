@@ -983,21 +983,23 @@ public class DijkstraShortestPath {
 
     distTo[s] = 0.0;
     pq.insert(s, 0.0);
-    while (!pq.isEmpty())
-      relax(G, pq.delete())
+
+    while (!pq.isEmpty()) {
+      int v = pq.delMin();
+      for (DirectedEdge e : G.adj(v))
+        relax(e);
+    }
   }
 
-  private void relax(EdgeWeightedDigraph G, int v) {
-    for(DirectedEdge e : G.adj(v)) {
-      int w = e.to();
-      if (distTo[w] > distTo[v] + e.weight()) {
-        edgeTo[w] = e;
-        distTo[w] = distTo[v] + e.weight();
-        if (pq.contains(w))
-          pq.change(w, distTo[w]);
-        else
-          pq.insert(w, distTo[w])
-      }
+  private void relax(DirectedEdge e) {
+    int v = e.from(), w = e.to();
+    if (distTo[w] > distTo[v] + e.weight()) {
+      distTo[w] = distTo[v] + e.weight();
+      edgeTo[w] = e;
+      if (pq.contains(w))
+        pq.change(w, distTo[w]);
+      else
+        pq.insert(w, distTo[w])
     }
   }
 }

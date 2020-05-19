@@ -631,6 +631,22 @@ public class DepthFirstOrder {
     return reversePost;
   }
 }
+
+public class Topological {
+  private Iterable<Integer> order;
+
+  public Topological(Digraph G) {
+    DirectedCycle dc = new DirectedCycle(G);
+    if (!dc.hasCycle()) {
+      DepthFirstOrder dfs = new DepthFirstOrder(G);
+      order = dfs.reversePost();
+    }
+  }
+
+  public Iterable<Integer> order() {
+    return order;
+  }
+}
 ```
 
 

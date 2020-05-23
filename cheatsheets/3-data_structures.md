@@ -679,7 +679,7 @@ public class KosarajuSCC {
     id = new int[G.V()];
 
     DepthFirstOrder order = new DepthFirstOrder(G.reverse());
-    for (int s : order.reversePost())
+    for (int v : order.reversePost())
       if (!visited[v]) {
         dfs(G, v);
         count++;

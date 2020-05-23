@@ -522,7 +522,7 @@ public class ConnectedComponents {
     visited = new boolean[G.V()];
     id = new int[G.V()];
 
-    for (int s = 0; s < G.V(); s++)
+    for (int v = 0; s < G.V(); s++)
       if (!visited[v]) {
         dfs(G, v);
         count++;

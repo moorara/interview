@@ -749,7 +749,7 @@ public class QuickFind {
     if (pid == qid)
       return;
 
-    // Rename p component to q component.
+    // Rename p to q.
     for (int i = 0; i < id.length; i++)
       if (id[i] == pid)
         id[i] = qid;
@@ -788,7 +788,6 @@ public class QuickUnion {
     if (pRoot == qRoot)
       return;
 
-    // Rename p component to q component.
     id[pRoot] = qRoot;
     count--;
   }

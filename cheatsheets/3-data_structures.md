@@ -708,12 +708,24 @@ public class KosarajuSCC {
 
 #### Union-Find
 
+  - The union-find (a.k.a. disjoint-sets) data type is collection of n elements.
+    - Intially, each element belongs to exactly one set (n sets initially).
+    - Each set is represented by one element (_canonical element_, _root_, _identifier_, _leader_, or _set representative_).
+    - The **union** operation merges the set containing the element p with the set containing the element q.
+    - The **find** operation returns the canonical element of the set containing the element p.
+  - Elements in one set are considered connected to each other.
+  - _p is connected to q_ is an **equivalence relation**:
+    - Reflexive: p is connected to p.
+    - Symmetric: If p is connected to q, then q is connected to p.
+    - Transitive: If p is connected to q and q is connected to r, then p is connected to r.
+  - An equivalence relation partitions the objects into **equivalence classes** (components).
+
 ```java
-public class UnionFind {
+public class QuickFind {
   private int count;  // number of components
   private int[] id;
 
-  public UnionFind(int N) {
+  public QuickFind(int N) {
     count = N;
     id = new int[N];
 
@@ -747,11 +759,11 @@ public class UnionFind {
 ```
 
 ```java
-public class QuickUnionFind {
+public class QuickUnion {
   private int count;  // number of components
   private int[] id;
 
-  public QuickUnionFind(int N) {
+  public QuickUnion(int N) {
     count = N;
     id = new int[N];
 
@@ -784,12 +796,12 @@ public class QuickUnionFind {
 ```
 
 ```java
-public class WeightedQuickUnionFind {
+public class WeightedQuickUnion {
   private int count;   // number of components
   private int[] id;    // parent link
   private int[] size;  // size of component for roots
 
-  public WeightedQuickUnionUF(int N) {
+  public WeightedQuickUnion(int N) {
     count = N;
     id = new int[N];
     size = new int[N];

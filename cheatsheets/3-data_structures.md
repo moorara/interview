@@ -570,8 +570,8 @@ public class DirectedCycle {
   }
 
   private void dfs(Digraph G, int v) {
-    visited[v] = true;
     onStack[v] = true;
+    visited[v] = true;
     for (int w : G.adj(v)) {
       if (cycle != null) {  // short circuit if a cycle already found
         return;

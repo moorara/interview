@@ -1,11 +1,18 @@
-# Discrete Math
+# Math
+
+## Linear Algebra
+
+### Matrix Operations
+
+
+## Discrete Math
 
 **Rule of sum.** the number of ways to choose one element from one of two disjoint sets is the sum of the cardinalities of the sets.
 
 **Rule of product.** the number of ways to choose an ordered pair is the number of ways to choose the first element times the number of ways to choose the second element.
 
 
-## Probability
+### Probability
 
 Sample space `S` the set of all possible outcomes/events.
 
@@ -22,5 +29,3 @@ Permutation:  P(n, k)  =  n! / (n - k)!
 Combination:  C(n, k)  =  n! / (n - k)! k!
 ```
 
-
-## Graph Theory

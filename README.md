@@ -23,7 +23,7 @@ A collection of notes and resources for beating technical interviews for softwar
   - [DevOps](./cheatsheets/16-devops.md)
   - [Cloud Computing](./cheatsheets/17-cloud_computing.md)
   - [Big Data](./cheatsheets/18-big_data.md)
-  - [Discrete Math](./cheatsheets/19-discrete_math.md)
+  - [Math](./cheatsheets/19-math.md)
   - [Statistics](./cheatsheets/20-statistics.md)
   - [Artificial Intelligence](./cheatsheets/21-artificial_intelligence.md)
   - [Machine Learning](./cheatsheets/22-machine_learning.md)

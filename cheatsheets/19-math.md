@@ -4,6 +4,14 @@
 
 ### Matrix Operations
 
+  | Operation                                        | Calculation                                      |
+  |--------------------------------------------------|--------------------------------------------------|
+  | C<sub>nm</sub> = A<sub>mn</sub><sup>T</sup>      | c<sub>ij</sub> = a<sub>ji</sub>                  |
+  | C<sub>mn</sub> = b A<sub>mn</sub>                | c<sub>ij</sub> = b a<sub>ij</sub>                |
+  | C<sub>mn</sub> = A<sub>mn</sub> + B<sub>mn</sub> | c<sub>ij</sub> = a<sub>ij</sub> + b<sub>ij</sub> |
+  | C<sub>mn</sub> = A<sub>mn</sub> - B<sub>mn</sub> | c<sub>ij</sub> = a<sub>ij</sub> - b<sub>ij</sub> |
+  | C<sub>mp</sub> = A<sub>mn</sub> B<sub>np</sub>   | Σ<sub>k=1</sub><sup>n</sup> c<sub>ij</sub> = a<sub>ik</sub> b<sub>kj</sub> |
+
 
 ## Discrete Math
 

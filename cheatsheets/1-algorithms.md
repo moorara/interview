@@ -74,7 +74,7 @@
 
 ### Growth of Functions
 
-  - c < log<sup>n</sup> < n<sup>c</sup> (0 < c < 1) < n < nlog<sup>n</sup> < n<sup>2</sup> < n<sup>c</sup> (c > 1) < c<sup>n</sup> < n! < n<sup>n</sup>
+  - c < log<sup>n</sup> < n<sup>c</sup> (0<c<1) < n < nlog<sup>n</sup> < n<sup>2</sup> < n<sup>c</sup> (c>2) < c<sup>n</sup> < n! < n<sup>n</sup>
 
 ### Math Summary
 

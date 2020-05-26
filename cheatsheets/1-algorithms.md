@@ -60,8 +60,8 @@
   - f(n) = Θ(g(n)) iff f(n) = Ω(g(n)) and f(n) = O(g(n))
 
 **Notes:**
-  - Using **O-notation**, we can describe the running time of an algorithm merely by inspecting the algorithm’s overall structure.
-  - Using **O-notation** to bound the **worst-case** running time of an algorithm gives an upper bound on the running time for every input.
+  - A **structural analysis** on **worst-case** running time of an algorithm gives an **upper bound (Big-O)** on the running time of the algorithm for every input.
+  - A **structural analysis** on **best-case** running time of an algorithm gives a **lower bound (Big-Ω)** on the running time of the algorithm for every input.
   - Big-O notation may or may not be asymptotically tight while small-o notation is a upper bound that is not asymptotically tight.
   - Big-Ω notation may or may not be asymptotically tight while small-ω notation is a lower bound that is not asymptotically tight.
 

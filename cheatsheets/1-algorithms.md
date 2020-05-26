@@ -66,6 +66,12 @@
   - Big-Ω notation may or may not be asymptotically tight while small-ω notation is a lower bound that is not asymptotically tight.
 
 
+### Structural Analysis
+
+  1. Having an algorithm, assign a cost c<sub>i</sub> to each statement besides the running times t<sub>i</sub> for that statement.
+  2. Calculate a sum over c<sub>i</sub>t<sub>i</sub> terms for all statements.
+
+
 ### Growth of Functions
 
   - c < log<sup>n</sup> < n<sup>c</sup> (0 < c < 1) < n < nlog<sup>n</sup> < n<sup>2</sup> < n<sup>c</sup> (c > 1) < c<sup>n</sup> < n! < n<sup>n</sup>
@@ -80,14 +86,6 @@
   - 1 + (1/2) + ... + (1/n) = ln(n) + O(1)
   - e<sup>x</sup> = 1 + x + (x<sup>2</sup>/2!) + (x<sup>3</sup>/3!) + ...  -->  x + 1 <= e<sup>x</sup> <= x<sup>2</sup> + x + 1
   - ln(x + 1) = x - (x<sup>2</sup>/2) + (x<sup>3</sup>/3) - ...  -->  x / (x + 1) <= ln(x + 1) <= x
-
-
-### Structural Analysis
-
-  - A structural analysis on **worst-case** running time of an algorithm gives an **upper bound** for the algorithm.
-  - A structural analysis on **best-case** running time of an algorithm gives a **lower bound** for the algorithm.
-    1. Having an algorithm, assign a cost c<sub>i</sub> to each statement besides the running times t<sub>i</sub> for that statement.
-    2. Calculate a sum over c<sub>i</sub>t<sub>i</sub> terms for all statements.
 
 
 ### Recurrence Analysis

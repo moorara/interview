@@ -170,9 +170,7 @@ A problem must have two key elements in order for dynamic programming to apply:
   - The choices for a subproblem are the outgoing edges for that subproblem.
   - The running time of a dynamic programming algorithm is the sum of the times needed to solve each subproblem.
   - Typically, the time to compute the solution to a subproblem is proportional to the outgoing degree of the corresponding vertex.
-  - The top-down method with memorization for dynamic programming is a DFS of the subproblem graph.
   - The bottom-up approach often has much better constant factors.
-  - The bottom-up dynamic programming visits the vertices of the subproblem graph in an order that is a reverse topological sort.
 
 
 ### Greedy Algorithms

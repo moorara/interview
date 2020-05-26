@@ -61,10 +61,8 @@ public static void sort(Comparable[] a) {
   while (h < N/3)
     h = 3*h + 1;  // 1, 4, 13, 40, 121, ...
   while (h >= 1) {
-    // h-sort the array
-    for (int i = h; i < N; i++)
-      // Insert a[i] among a[i-h], a[i-2*h], a[i-3*h], ...
-      for (int j = i; j >= h && a[j] < a[j-h]; j -= h)
+    for (int i = h; i < N; i++)                         // h-sort the array
+      for (int j = i; j >= h && a[j] < a[j-h]; j -= h)  // insert a[i] among a[i-h], a[i-2*h], a[i-3*h], ...
         exchange(a, j, j-h);
     h = h/3;
   }

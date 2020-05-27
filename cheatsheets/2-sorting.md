@@ -73,7 +73,7 @@ public static void sort(Comparable[] a) {
   - A g-sorted array remains g-sorted after h-sorting.
   - Shell sort _h-sorts_ array for decreasing sequence of h values. In order to h-sort, we use insertion sort with stride length h.
   - The worst-case number of compares used by Shell sort with 3h+1 increment is O(N<sup>3/2</sup>).
-  - Shellsort gains efficiency by making a tradeoff between size and partial order in the subsequences.
+  - Shell sort gains efficiency by making a trade-off between size and partial order in the subsequences.
   - Read more [1](https://en.wikipedia.org/wiki/Shellsort), [2](https://www.tutorialspoint.com/data_structures_algorithms/shell_sort_algorithm.htm)
 
 

@@ -258,7 +258,7 @@ Key-indexed counting is efficient for sorting keys with integer digits between `
 
 ```java
 public static void sort(String[] a, int W) {  // fixed-length W strings
-  int R = 256;  // radix R
+  int R = 256;  // extended ASCII size
   int N = a.length;
   String[] aux = new String[N];
   for (int d = W-1; d >= 0; d--) {                // counting sort (stable)

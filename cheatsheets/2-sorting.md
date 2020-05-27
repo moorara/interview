@@ -268,7 +268,7 @@ public static void sort(String[] a, int W) {  // fixed-length W strings
     for (int r = 0; r < R; r++)                   // compute cumulative counts
       count[r+1] += count[r];
     for (int i = 0; i < N; i++)
-      aux[count[a[i].charAt(d)]++] = a[i];        // move data to aux
+      aux[count[a[i].charAt(d)]++] = a[i];        // distribute keys to aux
     for (int i = 0; i < N; i++)
       a[i] = aux[i];                              // copy back aux to a
   }

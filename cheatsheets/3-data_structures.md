@@ -12,13 +12,13 @@
     - Linked-List
     - Stack (LIFO)
     - Queue (FIFO)
-    - [Skip-List](#skip-list)
+    - [Skip-List](#skip-lists)
   * [**Heaps**](#heap)
     - Binary Heaps
     - Binomial Heaps
     - Fibonacci Heaps
     - Pairing Heaps
-  * [**Symbol Tables**](#symbol-table)
+  * [**Symbol Tables**](#symbol-tables)
     - Ordered:
       - [Binary Search Tree](#binary-search-tree)
       - [AVL Binary Search Tree](#avl)

@@ -257,11 +257,11 @@ Key-indexed counting is efficient for sorting keys with integer digits between `
 #### LSD (_Least Significant Digit_)
 
 ```java
-public static void sort(String[] a, int W) {  // fixed-length W strings
+public static void sort(String[] a, int W) {      // fixed-length W strings
   int R = 256;  // extended ASCII size
   int N = a.length;
   String[] aux = new String[N];
-  for (int d = W-1; d >= 0; d--) {                // counting sort (stable)
+  for (int d = W-1; d >= 0; d--) {                // sort by key-indexed counting on dth char (stable)
     int[] count = new int[R+1];
     for (int i = 0; i < N; i++)                   // compute frequency counts
       count[a[i].charAt(d) + 1]++;

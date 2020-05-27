@@ -134,6 +134,17 @@ for some constant c < 1 and all sufficiently large n, then  T(n) = Θ(f(n))
   2. **Conquer** the sub-problems by solving them **recursively**. If the sub-problem sizes are small enough, solve them in a straightforward manner.
   3. **Combine** the solutions to the sub-problems into the solution for the original problem.
 
+#### Recursion
+
+  - Identify a notion of **size** for the problem and formulate the problem in form of a **recursive function**:
+  - Examples:
+    - Factorial: f(n) = n ✕ f(n-1)
+    - Fibonacci: f(n) = f(n-1) + f(n-2)
+
+  1. Check for the **end condition** of recursion and solve the problem for the smallest size(s) straightly.
+  2. Call the function recursively to solve the problem(s) with smaller size(s).
+  3. Combine the solutions to the smaller problems and return the solution.
+
 
 ### Dynamic Programming
 

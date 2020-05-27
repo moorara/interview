@@ -230,7 +230,7 @@ private static void sink(Comparable[] a, int k, int n) {
     int j = 2 * k;
     if (j < n && a[j] < a[j + 1]) j++;
     if (a[k] >= a[j]) break;
-    exchange(k, j);
+    exchange(a, k, j);
     k = j;
   }
 }

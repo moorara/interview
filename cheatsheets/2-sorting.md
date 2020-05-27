@@ -108,7 +108,9 @@ public static void sort(Comparable[] a) {
   Comparable[] aux = new Comparable[a.length];
   sort(a, aux, 0, a.length - 1);
 }
+```
 
+```java
 // Iterative
 public static void sort(Comparable[] a) {
   int n = a.length;
@@ -161,6 +163,9 @@ public static void sort(Comparable[] a) {
   sort(a, 0, a.length - 1);
 }
 
+```
+
+```java
 // Quick Select
 public static Comparable select(Comparable[] a, int k) {
   shuffle(a);

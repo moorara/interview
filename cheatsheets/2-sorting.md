@@ -6,18 +6,18 @@
 
 ## Sorting Summary
 
-| Algorithm                        | Best Case       | Average Case      | Worst Case      | Space | Remarks                                            |
-|----------------------------------|-----------------|-------------------|-----------------|-------|----------------------------------------------------  |
-| [Selection](#selection-sort)     | N<sup>2</sup>/2 | N<sup>2</sup>/2   | N<sup>2</sup>/2 | 1     | N exchanges                                        |
-| [Insertion](#insertion-sort)     | N               | N<sup>2</sup>/4   | N<sup>2</sup>/2 | 1     | **Stable**, For small N or partially ordered       |
-| [Shell](#shell-sort)             | N               | ?                 | ?               | 1     | Tight code, Subquadratic                           |
-| [Merge](#merge-sort)             | NlgN            | NlgN              | NlgN            | N     | **Stable**, **NlgN guarantee**, Extra memory       |
-| [Quick](#quick-sort)             | NlgN            | 2NlnN             | N<sup>2</sup>/2 | clgN  | **NlgN probabilistic guarantee**                   |
-| [3-Way Quick](#3-way-quick-sort) | N               | 2NlnN             | N<sup>2</sup>/2 | clgN  | Faster in presence of **duplicate keys**           |
-| [Heap](#heap-sort)               | NlgN            | NlgN              | NlgN            | 1     | **NlgN guarantee**                                 |
-| [LSD Radix](#radix-sort)         |                 | 2NW               | 2NW             | N+R   | Stable, **Non-comparative**, Fixed-length W keys   |
-| [MSD Radix](#radix-sort)         |                 | Nlog<sub>R</sub>N | 2NW             | N+DR  | Stable, **Non-comparative**, Average-length W keys |
-| [Radix Quick](#radix-sort)       |                 | 2NlnN             | 2NWlnR          | lgN+W | Char/Digit compare-based, Cache-friendly           |
+| Algorithm                                 | Best Case       | Average Case      | Worst Case      | Space | Remarks                                            |
+|-------------------------------------------|-----------------|-------------------|-----------------|-------|----------------------------------------------------|
+| [Selection](#selection-sort)              | N<sup>2</sup>/2 | N<sup>2</sup>/2   | N<sup>2</sup>/2 | 1     | N exchanges                                        |
+| [Insertion](#insertion-sort)              | N               | N<sup>2</sup>/4   | N<sup>2</sup>/2 | 1     | **Stable**, For small N or partially ordered       |
+| [Shell](#shell-sort)                      | N               | ?                 | ?               | 1     | Tight code, Subquadratic                           |
+| [Merge](#merge-sort)                      | NlgN            | NlgN              | NlgN            | N     | **Stable**, **NlgN guarantee**, Extra memory       |
+| [Quick](#quick-sort)                      | NlgN            | 2NlnN             | N<sup>2</sup>/2 | clgN  | **NlgN probabilistic guarantee**                   |
+| [3-Way Quick](#3-way-quick-sort)          | N               | 2NlnN             | N<sup>2</sup>/2 | clgN  | Faster in presence of **duplicate keys**           |
+| [Heap](#heap-sort)                        | NlgN            | NlgN              | NlgN            | 1     | **NlgN guarantee**                                 |
+| [LSD Radix](#lsd-least-significant-digit) |                 | 2NW               | 2NW             | N+R   | Stable, **Non-comparative**, Fixed-length W keys   |
+| [MSD Radix](#msd-most-significant-digit)  |                 | Nlog<sub>R</sub>N | 2NW             | N+DR  | Stable, **Non-comparative**, Average-length W keys |
+| [Radix Quick](#3-way-radix-quick-sort)    |                 | 2NlnN             | 2NWlnR          | lgN+W | Char/Digit compare-based, Cache-friendly           |
 
   - Any **compare-based** sorting algorithm must use at least **lg(N!) ~ NlgN** compares in the worst case.
 

@@ -160,10 +160,10 @@ public interface ST<Key, Value> {
   - In an AVL tree, the heights of the two child sub-trees of any node differ by at most one.
     - `|bf| <= 1` (balance factor = height(left subtree) - height(right subtree))
   - Two rotation operations re-balance the tree in four cases:
-    - **Left-Left:** a right rotation balances the tree.
-    - **Right-Right:** a left rotation balances the tree.
-    - **Left-Right:** a right rotation and then a left rotation balance the tree.
-    - **Right-Left:** a left rotation and then a right rotation balance the tree.
+    - **LL** (Left-Left imbalance): a right rotation balances the tree.
+    - **RR** (Right-Right imbalance): a left rotation balances the tree.
+    - **LR** (Left-Right imbalance): a left rotation followed by a right rotation balances the tree.
+    - **RL** (Right-Left imbalance): a right rotation followed by a left rotation balances the tree.
 
 #### Red-Black
 

@@ -168,20 +168,21 @@ public interface ST<Key, Value> {
 #### Red-Black
 
   - **Red-Black** tree is a **self-balancing** binary search tree.
-  - Each node in RB tree can be either Red or Black. A Red node is connected to its parent with a Red link.
+  - The height of a Red-Black BST with N nodes is no more than 2lgN.
+  - Each node in RB tree can be either red or black. A red node is connected to its parent with a red link.
   - In a left-leaning Red-Black tree:
     - Red nodes/links lean left (left child of their parents).
     - No node has two red links connected to it.
-    - Perfect black balance: every path from root to null links has the same number of Black nodes/links.
+    - Perfect black balance: every path from root to null links has the same number of black nodes/links.
   - Search in Red-Black tree is the same as for elementary BST (ignoring color).
   - Two rotation operations and one color operation re-balance the tree in two cases:
-    - Case 1: inserting into a node with no Red link connected to it
-      - Do standard BST insert, and color new node/link Red.
-      - If new Red node/link is right leaning, do a **left rotation**.
-    - Case 2: inserting into a node with a Red link connected to it
-      - Do standard BST insert, and color new node/link Red.
+    - Case 1: inserting into a node with no red link connected to it
+      - Do standard BST insert, and color new node/link red.
+      - If new red node/link is right leaning, do a **left rotation**.
+    - Case 2: inserting into a node with a red link connected to it
+      - Do standard BST insert, and color new node/link red.
       - Do a **left/right rotation** to balance the tree if needed.
-      - Do a **color flip** to pass Red link up one level.
+      - Do a **color flip** to pass red link up one level.
       - Do a **left/right rotation** to make lean left if needed.
       - Repeat case 1 or case 2 up the tree as needed.
 

@@ -363,6 +363,7 @@ private static void sort(String[] a, int lo, int hi, int d) {
 }
 
 public static void sort(String[] a) {
+  shuffle(a);  // can be done in Θ(n)
   sort(a, 0, a.length - 1, 0);
 }
 ```

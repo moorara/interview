@@ -70,8 +70,8 @@
 ## Heaps
 
   - Heaps are **tree-based** abstract data types for implementing priority queues.
-  - Max Heap property, the keys of parent nodes are greater than or equal to keys of children and the highest key is in the root.
-  - Min Heap property, the keys of parent nodes are less than or equal to keys of children and the lowest key is in the root.
+  - Max Heap: the keys of parent nodes are greater than or equal to keys of children and the highest key is in the root.
+  - Min Heap: the keys of parent nodes are less than or equal to keys of children and the lowest key is in the root.
   - A **binary heap** is a **complete binary tree** which can be represented using an array.
   - In binary heap, parent of node at `k` is at `k/2` and children of node at `k` are at `2k` and `2k+1`.
   - **Promotion (Swim)** in binary heap: exchange key in child with key in parent until heap order is restored.

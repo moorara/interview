@@ -158,6 +158,7 @@ public interface ST<Key, Value> {
 
   - **AVL** tree is a **self-balancing** binary search tree.
   - In an AVL tree, the heights of the two child sub-trees of any node differ by at most one.
+    - `|bf| <= 1` (balance factor = height(left subtree) - height(right subtree))
   - Two rotation operations re-balance the tree in four cases:
     - **Left-Left:** a right rotation balances the tree.
     - **Right-Right:** a left rotation balances the tree.

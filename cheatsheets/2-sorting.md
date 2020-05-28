@@ -267,10 +267,10 @@ public static void sort(String[] a, int W) {      // fixed-length W strings
       count[a[i].charAt(d) + 1]++;
     for (int r = 0; r < R; r++)                   // compute cumulative counts
       count[r+1] += count[r];
-    for (int i = 0; i < N; i++)
-      aux[count[a[i].charAt(d)]++] = a[i];        // distribute keys to aux
-    for (int i = 0; i < N; i++)
-      a[i] = aux[i];                              // copy back aux to a
+    for (int i = 0; i < N; i++)                   // distribute keys to aux
+      aux[count[a[i].charAt(d)]++] = a[i];
+    for (int i = 0; i < N; i++)                   // copy back aux to a
+      a[i] = aux[i];
   }
 }
 ```

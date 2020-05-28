@@ -254,6 +254,7 @@ public static void sort(Comparable[] a) {
 
 Key-indexed counting is efficient for sorting keys with integer digits between `0` and `R-1` (_R_ is a small number).
 
+
 #### LSD (_Least Significant Digit_)
 
 ```java
@@ -274,6 +275,9 @@ public static void sort(String[] a, int W) {      // fixed-length W strings
   }
 }
 ```
+
+  - LSD string sort stably sorts **fixed-length** strings.
+
 
 #### MSD (_Most Significant Digit_)
 

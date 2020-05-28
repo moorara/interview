@@ -181,9 +181,9 @@ public interface ST<Key, Value> {
       - Do standard BST insert, and color the new node/link red.
       - If the new red node/link is right leaning, do a **left rotation**.
     - Case 2: inserting into a node with a red link connected to it
-      - Do standard BST insert, and color new node/link red.
+      - Do standard BST insert, and color the new node/link red.
       - Do a **left or/and right rotation** to balance the tree if needed.
-      - Do a **color flip** to pass red link up one level.
+      - Do a **color flip** to pass the red link up one level.
       - Do a **left or/and right rotation** to make lean left if needed.
       - Repeat case 1 or case 2 up the tree as needed.
 

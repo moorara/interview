@@ -178,8 +178,8 @@ public interface ST<Key, Value> {
   - Search in Red-Black tree is the same as for elementary BST (ignoring color).
   - Two rotation operations and one color operation re-balance the tree in two cases:
     - Case 1: inserting into a node with no red link connected to it
-      - Do standard BST insert, and color new node/link red.
-      - If new red node/link is right leaning, do a **left rotation**.
+      - Do standard BST insert, and color the new node/link red.
+      - If the new red node/link is right leaning, do a **left rotation**.
     - Case 2: inserting into a node with a red link connected to it
       - Do standard BST insert, and color new node/link red.
       - Do a **left/right rotation** to balance the tree if needed.

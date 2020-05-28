@@ -252,7 +252,8 @@ public static void sort(Comparable[] a) {
 
 ### Radix Sorts
 
-Key-indexed counting is efficient for sorting keys with integer digits between `0` and `R-1` (_R_ is a small number).
+  - Key-indexed counting is efficient for sorting keys with integer digits between `0` and `R-1` (_R_ is a small number).
+  - LSD and MSD Radix sorting algorithms are efficient for a large number of keys with small constant width.
 
 
 #### LSD (_Least Significant Digit_)
@@ -316,7 +317,6 @@ public static void sort(String[] a) {
 }
 ```
 
-  - LSD and MSD Radix sorting algorithms are efficient for a large number of keys with small constant width.
   - MSD Radix sorting algorithm accesses memory randomly, and it is **cache inefficient**.
   - MSD Radix sorting algorithm creates huge number of small sub-arrays due to recursion, and it is much too slow for small sub-arrays.
   - Cut-off to insertion sort for small sub-arrays can be implemented.
@@ -347,10 +347,9 @@ private static int charAt(String s, int d) {
 private static void sort(String[] a, int lo, int hi, int d) {
   if (hi <= lo)
     return;
-  int lt = lo, gt = hi;
+  int lt = lo, i = lo+1, gt = hi;
   int v = charAt(a[lo], d);
-  int i = lo + 1;
-  while (i <= gt) {
+  while (i <= gt) {  // 3-way partitioning on dth char
     int c = charAt(a[i], d);
     if      (c < v)  exchange(a, lt++, i++);
     else if (c > v)  exchange(a, i, gt--);

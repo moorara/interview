@@ -258,19 +258,20 @@ Key-indexed counting is efficient for sorting keys with integer digits between `
 #### LSD (_Least Significant Digit_)
 
 ```java
-public static void sort(String[] a, int W) {      // fixed-length W strings
+// fixed-length W strings
+public static void sort(String[] a, int W) {
   int R = 256;  // extended ASCII size
   int N = a.length;
   String[] aux = new String[N];
-  for (int d = W-1; d >= 0; d--) {                // sort by key-indexed counting on dth char (stable)
+  for (int d = W-1; d >= 0; d--) {            // sort by key-indexed counting on dth char (stable)
     int[] count = new int[R+1];
-    for (int i = 0; i < N; i++)                   // compute frequency counts
+    for (int i = 0; i < N; i++)               // compute frequency counts
       count[a[i].charAt(d) + 1]++;
-    for (int r = 0; r < R; r++)                   // compute cumulative counts
+    for (int r = 0; r < R; r++)               // compute cumulative counts
       count[r+1] += count[r];
-    for (int i = 0; i < N; i++)                   // distribute keys to aux
+    for (int i = 0; i < N; i++)               // distribute keys to aux
       aux[count[a[i].charAt(d)]++] = a[i];
-    for (int i = 0; i < N; i++)                   // copy back aux to a
+    for (int i = 0; i < N; i++)               // copy back aux to a
       a[i] = aux[i];
   }
 }
@@ -289,25 +290,29 @@ private static int charAt(String s, int d) {
     return -1;
 }
 
-private static void sort(String[] a, String[] aux, int lo, int hi, int d) {  // variable-length strings
+// Recursive
+// variable-length strings
+private static void sort(String[] a, String[] aux, int lo, int hi, int d) {
   if (hi <= lo)
     return;
-  int[] count = new int[R + 2];
-  for (int i = lo; i <= hi; i++)
-    count[charAt(a[i], d)]++;
-  for (int r = 0; r < R + 1; r++)
-    count[r + 1] = count[r];
-  for (int i = lo; i <= hi; i++)
+  int[] count = new int[R+2];
+  for (int i = lo; i <= hi; i++)                              // compute frequency counts
+    count[charAt(a[i], d) + 2]++;
+  for (int r = 0; r < R + 1; r++)                             // transform counts to indicies
+    count[r+1] += count[r];
+  for (int i = lo; i <= hi; i++)                              // distribute keys to aux
     aux[count[charAt(a[i], d) + 1]++] = a[i];
-  for (int i = lo; i <= hi; i++)
+  for (int i = lo; i <= hi; i++)                              // copy back aux to a
     a[i] = aux[i - lo];
-  for (int r = 0; r < R; r++)
-    sort(a, aux, lo + count[r], lo + count[r + 1] - 1, d + 1);
+  for (int r = 0; r < R; r++)                                 // recursively sort for each character (excludes -1)
+    sort(a, aux, lo + count[r], lo + count[r+1] - 1, d+1);
 }
 
-public static void sort_msd(String[] a) {
-  aux = new String[a.length];
-  sort(a, aux, 0, a.length - 1, 0);
+// Driver
+public static void sort(String[] a) {
+  int N = a.length;
+  aux = new String[N];
+  sort(a, aux, 0, N-1, 0);
 }
 ```
 
@@ -317,11 +322,11 @@ public static void sort_msd(String[] a) {
   - Cut-off to insertion sort for small sub-arrays can be implemented.
 
 ```java
-private static void less(String a, string b, int d) {
+private static void less(String a, String b, int d) {
   return a.substring(d).compareTo(b.substring(d));
 }
 
-public static void sort_insertion(String[] a, int lo, int hi, int d) {
+public static void insertion_sort(String[] a, int lo, int hi, int d) {
   for (int i = lo; i <= hi; i++)
     for (int j = i; j > lo && less(a[j], a[j - 1], d); j--)
       exchange(a, j, j - 1);

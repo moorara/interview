@@ -369,4 +369,5 @@ public static void sort(String[] a) {
 ```
 
   - 3-Way Radix Quick sort algorithm avoids re-comparing long common prefixes.
+  - Cut-off to insertion sort for small sub-arrays can be implemented.
 

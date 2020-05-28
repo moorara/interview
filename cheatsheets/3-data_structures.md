@@ -136,6 +136,7 @@ public interface ST<Key, Value> {
 | AVL       | 1.44lgN        | 1.44lgN*       | 1.44lgN*       | lgN              | lgN*             | lgN*             |
 | Red-Black | 2lgN           | 2lgN           | 2lgN           | lgN*             | lgN*             | lgN*             |
 
+  - `*` are **amortized** running times.
   - AVL trees maintain a more rigid balance than red-black trees.
   - Lookup in an AVL tree is typically faster, but this comes at the cost of slower insertion and deletion.
 

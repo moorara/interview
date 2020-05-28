@@ -170,9 +170,9 @@ public interface ST<Key, Value> {
   - **Red-Black** tree is a **self-balancing** binary search tree.
   - Each node in RB tree can be either Red or Black. A Red node is connected to its parent with a Red link.
   - In a left-leaning Red-Black tree:
-    - Red nodes are always the left child of their parents (Red links lean left).
-    - No Red node is connected to another Red node (No node has two Red links connected to it).
-    - Every path from root to null links has the same number of Black nodes/links (perfect black balance).
+    - Red nodes/links lean left (left child of their parents).
+    - No node has two red links connected to it.
+    - Perfect black balance: every path from root to null links has the same number of Black nodes/links.
   - Search in Red-Black tree is the same as for elementary BST (ignoring color).
   - Two rotation operations and one color operation re-balance the tree in two cases:
     - Case 1: inserting into a node with no Red link connected to it

@@ -168,7 +168,8 @@ public interface ST<Key, Value> {
 #### Red-Black
 
   - **Red-Black** tree is a **self-balancing** binary search tree.
-  - The height of a Red-Black BST with N nodes is no more than 2lgN.
+    - The height of a Red-Black BST with N nodes is no more than 2lgN.
+    - The average length of a path from the root to a node in a Red-Black BST with N nodes is ~lgN.
   - Each node in RB tree can be either red or black. A red node is connected to its parent with a red link.
   - In a left-leaning Red-Black tree:
     - Red nodes/links lean left (left child of their parents).

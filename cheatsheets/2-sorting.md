@@ -357,8 +357,8 @@ private static void sort(String[] a, int lo, int hi, int d) {
   }
   sort(a, lo, lt-1, d);
   if (v >= 0)
-    sort(a, lt, gt, d + 1);
-  sort(a, gt + 1, hi, d);
+    sort(a, lt, gt, d+1);
+  sort(a, gt+1, hi, d);
 }
 
 public static void sort(String[] a) {

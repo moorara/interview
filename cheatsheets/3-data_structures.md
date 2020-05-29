@@ -316,10 +316,10 @@ If we have a table of size M, and the hash value is an int between -2<sup>31</su
   - It allows range search, range count, and other queries.
   - The k-d tree is a **self-balancing** binary search tree in which:
     - Every node represents a k-dimensional point.
-    - The 1st dimension is the key of node (root) in level 1, the 2nd dimension is the key of nodes in level 2, and so on.
+    - The 1<sup>st</sup> dimension is the key of node in level 1 (root), the 2<sup>nd</sup> dimension is the key of nodes in level 2, and so on.
     - Every node divides the space into two half-spaces by a splitting hyperplane (every node is associated with one of the k-dimensions).
-    - Points with i-dimension value less than i-dimension value of the hyperplane are represented by the left sub-tree.
-    - Points with i-dimension value greater than i-dimension value of the hyperplane are represented by the right sub-tree.
+      - Points with i<sup>th</sup> dimension value less than i<sup>th</sup> dimension value of the hyperplane are represented by the left sub-tree.
+      - Points with i<sup>th</sup> dimension value greater than i<sup>th</sup> dimension value of the hyperplane are represented by the right sub-tree.
 
 ### R-Tree
 

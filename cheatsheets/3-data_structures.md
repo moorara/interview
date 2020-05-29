@@ -274,6 +274,8 @@ If we have a table of size M, and the hash value is an int between -2<sup>31</su
 
   - Range tree is a data structure for storing **points**.
   - It is optimized for querying and finding which points fall within a given interval.
+    - Range Search: find all points between P<sub>1</sub> and P<sub>2</sub>
+    - Range Count: number of points between P<sub>1</sub> and P<sub>2</sub>
   - A range tree on a set of 1-dimensional points:
     - A balanced binary search tree.
     - Points are stored in the leaves of the tree.

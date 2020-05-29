@@ -227,7 +227,7 @@ Hash function is a function to map an arbitrary size data to a fixed-size number
   - **Desirable:** if `k1 != k2`, then `hash(k1) != hash(k2)`
   - **Determinism:** for a given input value, a hash function must always generate the same hash value.
   - **Uniformity:** A hash function should map the expected inputs evenly over its output range (each hash value is equally likely for each key).
-  - **Non-invertible:** In cryptographic applications, hash functions are expected to be practically non-invertible (one-way hash functions).
+  - **Non-invertible:** Hash functions are expected to be practically non-invertible (one-way hash functions).
 
 Computing a hash value for user-defined types:
 

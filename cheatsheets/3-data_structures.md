@@ -28,7 +28,7 @@
       - Trie/Prefix Tree
       - Radix/Patricia Tree
     - Unordered:
-      - [Hash Table](#hash-tables)
+      - [Hash Tables](#hash-tables)
   * [**Spatial**](#spatial-data-structures)
     - [Range Tree](#range-tree)
     - [Segment Tree](#segment-tree)

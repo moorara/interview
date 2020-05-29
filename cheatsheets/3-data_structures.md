@@ -158,7 +158,7 @@ public interface ST<Key, Value> {
 
   - **AVL** tree is a **self-balancing** binary search tree.
   - In an AVL tree, the heights of the two child sub-trees of any node differ by at most one.
-    - `|bf| <= 1` (balance factor = height(left subtree) - height(right subtree))
+    - |bf| <= 1 (balance factor = height(left subtree) - height(right subtree))
   - Two rotation operations re-balance the tree in four cases:
     - **LL** (Left-Left imbalance): a right rotation balances the tree.
     - **RR** (Right-Right imbalance): a left rotation balances the tree.
@@ -190,15 +190,17 @@ public interface ST<Key, Value> {
 #### B-Tree
 
   - **B-Tree** is a **self-balancing** tree and generalization of binary search trees.
-  - Search, insertion, and deletion are done in **logarithmic time**.
+  - Search, insertion, and deletion are done in O(logN).
   - B-trees are optimized for reading and writing large blocks of data from and to **external storage systems**.
   - B-trees are commonly used in _databases_ and _file systems_ for indexing purposes.
   - In a B-tree of order `M`:
-    - There are internal nodes and external nodes.
-    - Each node can have at most `M-1` key-link pairs.
-    - The root node has at least `2` key-link pairs, and all other nodes have at least `M/2` key-link pairs.
-    - Internal nodes contain copies of keys to guide search, and external nodes are leaf nodes which contain keys and pointers to data.
-  - The order of a B-tree, `M`, should be large enough so that a B-tree node can fit in a data block (page).
+    - There are **internal nodes** and **external nodes**.
+    - Each node has at most `M-1` keys and `M` children.
+    - The root node has at least one key and two children.
+    - All other internal nodes (non-leaves) have at least `M/2` children.
+    - Internal nodes contain copies of keys to guide search.
+    - External nodes (leaves) contain keys and pointers to data.
+  - The order of a B-tree `M` should be large enough so that a B-tree node can fit in a data block (page).
   - Search:
     - Start at root.
     - Find interval for search key and take corresponding links.
@@ -208,7 +210,7 @@ public interface ST<Key, Value> {
     - Insert at an external/leaf node.
     - Split nodes with `M` key-link pairs on the way up the tree.
   - A search or insertion in a B-tree of order `M` with `N` keys requires between **log<sub>M-1</sub><sup>N</sup>** and **log<sub>M/2</sub><sup>N</sup>** external accesses.
-  - In B<sup>+</sup>-Tree, each external/leaf node has pointer to next external/leaf node for sequential access.
+  - In B<sup>+</sup>-Tree, each external/leaf node has pointer to the next external/leaf node for sequential access.
 
 
 ### Hash Tables

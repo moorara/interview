@@ -278,7 +278,7 @@ If we have a table of size M, and the hash value is an int between -2<sup>31</su
     - A balanced binary search tree.
     - Points are stored in the leaves of the tree.
     - Each non-leaf node stores the maximum value in its left subtree.
-    - A range tree on a set of points in d-dimensions is a multi-level BST (a BST on every dimension).
+  - A range tree on a set of points in d-dimensions is a multi-level BST (a BST on every dimension).
 
 ### Segment Tree
 

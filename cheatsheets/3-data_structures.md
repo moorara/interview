@@ -324,13 +324,13 @@ If we have a table of size M, and the hash value is an int between -2<sup>31</su
 ### R-Tree
 
   - R-Tree is a balanced search tree for indexing spatial data optimized for **external storage systems**.
-  - In an R-tree of order `M`:
+  - In an R-Tree of order `M`:
     - Each node (except root) can contain a number of entries between a minimum fill `30%-40%` and `M`.
     - Each entry within a non-leaf node stores the pointer to a child node and the bounding box of all entries within the child node.
     - Leaf nodes store a point or bounding box representing the child and an external identifier for the child.
-  - The order of an R-tree, `M`, should be large enough so that a node can fit in a data block (page).
-  - In an R-tree, the average search time is O(Mlog<sub>M</sub><sup>N</sup>) and the worst-case insertion time is O(N).
-  - Coverage is the entire area to cover all related rectangles and Overlap is the entire area which is contained in two or more nodes.
+  - The order of an R-Tree `M` should be large enough so that a node can fit in a data block (page).
+  - In an R-Tree, the average search time is O(Mlog<sub>M</sub><sup>N</sup>) and the worst-case insertion time is O(N).
+  - Coverage is the entire area to cover all related rectangles and overlap is the entire area which is contained in two or more nodes.
   - **R<sup>+</sup>-Tree** avoids overlapping of internal nodes by inserting an object into multiple leaves if necessary.
   - **R<sup>*</sup>-Tree** attempts to minimize both coverage and overlap using a revised node split algorithm and forced reinsertion at node overflow.
 

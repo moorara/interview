@@ -258,8 +258,8 @@ If we have a table of size M, and the hash value is an int between -2<sup>31</su
       - When a collision occurs at index h, the next indices are: h+1<sup>2</sup>, h+2<sup>2</sup>, h+3<sup>2</sup>, ...
       - Quadratic probing better avoids the clustering problem that can occur with linear probing.
     - **Double Hashing**
-      - Double hashing skips a variable amount each time using a second hash function.
-      - Double hashing effectively eliminates clustering and can allow table to be become nearly full.
+      - Skips a variable amount each time using a second hash function.
+      - Effectively eliminates clustering and can allow table to be become nearly full (higher load factor).
       - Given h<sub>1</sub> and h<sub>2</sub> hash functions, and a key k, the i+1 hash location is: h(i,k) = (h<sub>1</sub>(k) + i * h<sub>2</sub>(k)) mod M
 
 | Collision Resolution | Search (worst) | Insert (worst) | Delete (worst) | Search (average) | Insert (average) | Delete (average) |

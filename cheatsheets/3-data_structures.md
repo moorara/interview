@@ -565,6 +565,8 @@ public class ConnectedComponents {
 
 #### Directed Cycle
 
+  - A directed acyclic graph (DAG) is a digraph with no directed cycles.
+
 ```java
 public class DirectedCycle {
   private boolean[] visited;

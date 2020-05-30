@@ -867,7 +867,7 @@ public class WeightedQuickUnion {
     1. Find a cut with no black crossing edge, and color its minimum-weight edge black.
     1. Repeat until `V-1` edges are colored black.
   - Algorithms:
-    - **Kruskal** computes MST in time proportional to `ElgE` in the worst case.
+    - **Kruskal** computes MST in time proportional to `ElgE` and extra space proportional to `E` in the worst case.
     - **Lazy Prim** computes MST in time proportional to `ElgE` and extra space proportional to `E` in the worst case.
     - **Eager Prim** computes MST in time proportional to `ElgV` and extra space proportional to `V` in the worst case.
 

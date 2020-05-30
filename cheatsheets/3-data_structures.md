@@ -886,13 +886,13 @@ public class KruskalMST {
 
     UnionFind uf = new UnionFind(G.V());
 
-    while (!pq.isEmpty() && mst.size() < G.V() - 1) {
-      Edge e = pq.delete();                // get minimum-weight edge
+    while (!pq.isEmpty() && mst.size() < G.V() - 1) {  // greedy algorithm
+      Edge e = pq.delete();                            // get minimum-weight edge
       int v = e.either(), w = e.other(v);
-      if (!uf.connected(v, w)) {           // eligible edge
-        uf.union(v, w);                    // merge components
-        mst.enqueue(e);                    // add edge to MST
-        weight += e.weight();              // update MST weight
+      if (!uf.connected(v, w)) {                       // eligible edge
+        uf.union(v, w);                                // merge components
+        mst.enqueue(e);                                // add edge to MST
+        weight += e.weight();                          // update MST weight
       }
     }
   }

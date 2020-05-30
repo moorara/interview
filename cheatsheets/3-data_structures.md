@@ -941,22 +941,29 @@ public class LazyPrimMST {
 
 ```java
 public class EagerPrimMST {
-  private boolean[] visited;      // true if v on tree
-  private Edge[] edgeTo;          // shortest edge from tree vertex
-  private double[] distTo;        // distTo[w] = edgeTo[w].weight()
+  private boolean[] visited;      // visited[v] = true if v on tree, false otherwise
+  private Edge[] edgeTo;          // edgeTo[v] = shortest edge from tree vertex to non-tree vertex
+  private double[] distTo;        // distTo[v] = weight of shortest such edge (edgeTo[v].weight())
   private IndexMinPQ<Double> pq;  // eligible crossing edges
 
   public EagerPrimMST(EdgeWeightedGraph G) {
     visited = new boolean[G.V()];
-    edgeTo = new Edge[G.V
+    edgeTo = new Edge[G.V()];
     distTo = new double[G.V()];
-    pq = new IndexMinPQ<Double>(G.V());
-
     for (int v = 0; v < G.V(); v++)
       distTo[v] = Double.POSITIVE_INFINITY;
+    pq = new IndexMinPQ<Double>(G.V());
 
-    distTo[0] = 0.0;
-    pq.insert(0, 0.0);
+    // run from each vertex to find minimum spanning forest
+    for (int v = 0; v < G.V(); v++)
+      if (!visited[v])
+        prim(G, v);
+  }
+
+  // run Prim's algorithm in graph G, starting from vertex s
+  private void prim(EdgeWeightedGraph G, int s) {
+    distTo[s] = 0.0;
+    pq.insert(s, distTo[s]);
     while (!pq.isEmpty())
       visit(G, pq.delete());  // add closest vertex to tree
   }

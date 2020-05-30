@@ -1002,9 +1002,9 @@ public class EagerPrimMST {
 
 ```java
 public class DijkstraShortestPath {
-  private DirectedEdge[] edgeTo;
-  private double[] distTo;
-  private IndexMinPQ<Double> pq;
+  private DirectedEdge[] edgeTo;  // edgeTo[v] = last edge on shortest path s->v
+  private double[] distTo;        // distTo[v] = distance  of shortest path s->v
+  private IndexMinPQ<Double> pq;  // priority queue of vertices
 
   public DijkstraShortestPath(EdgeWeightedDigraph G, int s) {
     edgeTo = new DirectedEdge[G.V()];

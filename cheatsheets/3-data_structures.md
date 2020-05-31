@@ -1015,7 +1015,7 @@ public class DijkstraShortestPath {
     pq = new IndexMinPQ<Double>(G.V());
 
     distTo[s] = 0.0;
-    pq.insert(s, 0.0);
+    pq.insert(s, distTo[s]);
 
     while (!pq.isEmpty()) {
       int v = pq.delMin();

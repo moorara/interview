@@ -889,7 +889,7 @@ public class KruskalMST {
     while (!pq.isEmpty() && mst.size() < G.V() - 1) {  // greedy algorithm
       Edge e = pq.delete();                            // get minimum-weight edge
       int v = e.either(), w = e.other(v);
-      if (!uf.connected(v, w)) {                       // eligible edge
+      if (!uf.connected(v, w)) {                       // eligible edge (does not create a cycle)
         uf.union(v, w);                                // merge components
         mst.enqueue(e);                                // add edge to MST
         weight += e.weight();                          // update MST weight

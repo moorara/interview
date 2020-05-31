@@ -944,7 +944,8 @@ public class EagerPrimMST {
   private boolean[] visited;      // visited[v] = true if v on tree, false otherwise
   private Edge[] edgeTo;          // edgeTo[v] = shortest edge from tree vertex to non-tree vertex
   private double[] distTo;        // distTo[v] = weight of shortest such edge (edgeTo[v].weight())
-  private IndexMinPQ<Double> pq;  // eligible crossing edges
+  private IndexMinPQ<Double> pq;  // vertices connected by an edge to tree T
+                                  // priority of vertex v is the weight of shortest edge connecting v to T
 
   public EagerPrimMST(EdgeWeightedGraph G) {
     visited = new boolean[G.V()];

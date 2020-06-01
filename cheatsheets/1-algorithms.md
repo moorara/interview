@@ -165,7 +165,7 @@ A problem must have two key elements in order for dynamic programming to apply:
 
   1. A solution to the problem consists of making a choice that leaves one or more subproblems to be solved.
   2. We assume that for a given problem, we are given the choice that leads to an optimal solution.
-  3. Given this choice, we determine the subproblems and the resulting space of subproblems.
+  3. Given this choice, we determine which subproblems best characterize the resulting space of subproblems. 
   4. The solution to the problem must have optimal solutions to the subproblems.
 
 **Overlapping Subproblems**

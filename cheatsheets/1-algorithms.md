@@ -148,10 +148,13 @@ for some constant c < 1 and all sufficiently large n, then  T(n) = Θ(f(n))
 
 ### Dynamic Programming
 
-Dynamic programming typically applies to **optimization problems**.
-
-  - Optimization problems have many possible solutions.
-  - Each solution has a value, and we are interested in a solution with the optimal (minimum or maximum) value.
+  - Dynamic programming typically applies to **optimization problems**.
+    - Optimization problems have many possible solutions.
+    - Each solution has a value, and we are interested in a solution with the optimal (minimum or maximum) value.
+  - Dynamic programming uses additional memory to save computation time.
+  - With dynamic programming, an exponential-time solution can be transformed into a polynomial-time solution if:
+    - The number of distinct subproblems involved is polynomial in the input size
+    - Each subproblem can be solved in polynomial time
 
 A problem must have two key elements in order for dynamic programming to apply:
 

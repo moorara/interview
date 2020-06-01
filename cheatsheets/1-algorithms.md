@@ -175,7 +175,7 @@ A problem must have two key elements in order for dynamic programming to apply:
     2. modify the recursive algorithm to save the result of each subproblem and do not solve the same subproblems again.
     - Top-down method is a _depth first search (DFS)_ of the _subproblem graph_. 
   - **Bottom-up**:
-    - solve the subproblems from the smallest size to the largest, and save the solution (a notion of size for the problem is required).
+    - Solve the subproblems from the smallest size to the largest, and save the solution (a notion of size for the problem is required).
     - Each subproblem is solved only once, and when solving a subproblem, all of the smaller subproblems are already solved.
     - Bottom-up method is the _reverse topological sort_ of the _subproblem graph_ (or the _topological sort_ of the _transpose subproblem graph_).
 

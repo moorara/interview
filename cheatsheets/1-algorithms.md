@@ -178,14 +178,14 @@ A problem must have two key elements in order for dynamic programming to apply:
     - Solve the subproblems from the smallest size to the largest, and save the solution (a notion of size for the problem is required).
     - Each subproblem is solved only once, and when solving a subproblem, all of the smaller subproblems are already solved.
     - Bottom-up method is the _reverse topological sort_ of the _subproblem graph_ (or the _topological sort_ of the _transpose subproblem graph_).
+    - The bottom-up approach often has much better constant factors.
 
 **Subproblem Graph**
 
   - Each vertex corresponds to a distinct subproblem.
   - The choices for a subproblem are the outgoing edges for that subproblem.
   - The running time of a dynamic programming algorithm is the sum of the times needed to solve each subproblem.
-  - Typically, the time to compute the solution to a subproblem is proportional to the outgoing degree of the corresponding vertex.
-  - The bottom-up approach often has much better constant factors.
+  - The time to compute the solution to a subproblem is proportional to the outgoing degree of the corresponding vertex.
 
 
 ### Greedy Algorithms

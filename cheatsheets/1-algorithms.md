@@ -148,7 +148,8 @@ for some constant c < 1 and all sufficiently large n, then  T(n) = Θ(f(n))
 
 ### Dynamic Programming
 
-  - Dynamic programming typically applies to **optimization problems**.
+Dynamic programming typically applies to **optimization problems**.
+
   - Optimization problems have many possible solutions.
   - Each solution has a value, and we are interested in a solution with the optimal (minimum or maximum) value.
 

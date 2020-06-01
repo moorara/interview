@@ -1041,5 +1041,18 @@ public class DijkstraShortestPath {
 
 #### Maximum Flow
 
-  - TODO:
+  - Definitions:
+    - Given an **edge-weighted digraph**, source vertex `s`, and target vertex `t`:
+      - An _st-cut_ is a partition of vertices into two disjoint sets with s in one set and t in the other.
+      - The _capacity_ of a cut is the sum of the capacities of the edges from one set to the other.
+      - An _st-flow_ is an assignment of values to the edges such that:
+        - Capacity constraint: 0 <= edge's flow <= edge's capacity
+        - Local equilibrium: inflow = outflow at every vertext, except s and t
+      - The _value_ of a flow is the inflow at t.
+  - Problems:
+    - **Minimum Cut**: Find a cut of minimum capacity
+    - **Maximum Flow**: Find a flow of maximum value
+  - Algorithms:
+    - **Ford-Fulkerson**
+  - **Maxflow-Mincut Theorem**
 

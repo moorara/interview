@@ -167,7 +167,7 @@ A problem must have two key elements in order for dynamic programming to apply:
   1. We assume that for a given problem, we are given the choice that leads to an optimal solution.
   1. Given this choice, we determine which subproblems best characterize the resulting space of subproblems. 
   1. The solution to the problem must have optimal solutions to the subproblems.
-      - Suppose each of the subproblem solutions is not optimal and then deriving a contradiction.
+      - Suppose each of the subproblem solutions is not optimal and then derive a contradiction.
       - By _cutting out_ the non-optimal solution to each subproblem and _pasting in_ the optimal one, you show that you can get a better solution to the original problem.
 
 Optimal substructure varies across problem domains in two ways:

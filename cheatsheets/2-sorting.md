@@ -96,7 +96,7 @@ private static void merge(Comparable[] a, Comparable[] aux, int lo, int mid, int
 private static void sort(Comparable[] a, Comparable[] aux, int lo, int hi) {
   if (hi <= lo)
     return;
-  int mid = lo + (hi - lo) / 2;
+  int mid = (lo + hi) / 2;
   sort(a, aux, lo, mid);
   sort(a, aux, mid + 1, hi);
   if (a[mid + 1] >= a[mid]) return;  // improvement for partially-ordered arrays

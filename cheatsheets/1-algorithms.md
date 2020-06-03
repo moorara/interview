@@ -198,17 +198,16 @@ Optimal substructure varies across problem domains in two ways:
 ### Greedy Algorithms
 
   - A greedy algorithm makes a **locally optimal** choice in the hope that this choice will lead to a **globally optimal** solution.
-  - A greedy algorithm first makes choice (greedy choice) seems best at the moment and then solves the subproblem that remains.
-  - In dynamic programming, the algorithm makes choice at each step which depends on the solutions to subproblems.
+  - A greedy algorithm first makes a greedy choice that seems the best at the moment and then solves the remaining subproblem.
   - A dynamic programming algorithm proceeds bottom-up, whereas a greedy strategy usually progresses in a **top-down** fashion.
   - Greedy algorithms do not always yield optimal solutions.
 
   1. Determine the optimal substructure of the problem.
-  2. Develop a recursive solution.
-  3. Show that if we make the greedy choice, then only one subproblem remains.
-  4. Prove that a greedy choice at each step yields a globally optimal solution.
-  5. Develop a recursive algorithm that implements the greedy strategy.
-  6. Convert the recursive algorithm to an iterative algorithm.
+  1. Develop a recursive solution.
+  1. Show that if we make the greedy choice, then only one subproblem remains.
+  1. Prove that a greedy choice at each step yields a globally optimal solution.
+  1. Develop a recursive algorithm that implements the greedy strategy.
+  1. Convert the recursive algorithm to an iterative algorithm.
 
 Demonstrate optimal substructure by showing that, having made the greedy choice, what remains is a subproblem with the property that if we combine an optimal solution to the subproblem with the greedy choice, we arrive at an optimal solution to the original problem.
 

@@ -857,7 +857,7 @@ public class WeightedQuickUnion {
 
 #### Minimum Spanning Tree
 
-  - Given an **edge-weighted undirected** graph `G` with positive edge weights, an MST of `G` is a sub-graph `T` that is:
+  - Given an **edge-weighted undirected** graph `G` with **positive edge weights**, an MST of `G` is a sub-graph `T` that is:
     - Tree: connected and acyclic
     - Spanning: includes all of the vertices
     - Minimum: sum of the edge wights are minimum
@@ -997,7 +997,7 @@ public class EagerPrimMST {
     - rooted at `s`
     - every tree path is a _shortest path_ in the digraph.
   - Algorithms:
-    - **Dijkstra** computes a SPT in any digraph with non-negative edge weights in time proportional to `ElgV` (using binary heap).
+    - **Dijkstra** computes a SPT in any digraph with **non-negative edge weights** in time proportional to `ElgV` (using binary heap).
       - `edgeTo` : a vertex-indexed array in which `edgeTo[v]` is last edge on shortest path from `s` to `v`.
       - `distTo` : a vertex-indexed array in which `distTo[v]` is length of shortest path from `s` to `v`.
 

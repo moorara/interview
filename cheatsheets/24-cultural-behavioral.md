@@ -9,9 +9,9 @@
 
 ## Questions
 
-**Q.** Tell me about yourself, but you can’t mention anything that’s on your resume.
+**Q.** Tell me about yourself, but you can't mention anything that's on your resume.
 
-**Q.** Ask a thought-provoking” query to test how candidates think on the spot.
+**Q.** Ask a thought-provoking query to test how candidates think on the spot.
 
 **Q.** Rate your knowledge of technology trends on a scale of 1 to 10.
 

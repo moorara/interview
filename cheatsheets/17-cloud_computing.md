@@ -18,12 +18,26 @@
 
 ## Containerization
 
-  - Docker
-  - Rkt
+### Docker
+
+#### Technologies
+
+  - cgroups
+  - namespaces
 
 
 ## Orchestration
 
-  - Kubernetes
-  - Docker Swarm
-  
+### Kubernetes
+
+#### Architecture
+
+#### Resources
+
+  - Pod
+  - Deployment
+  - Service
+  - ConfigMap
+  - Secret
+  - Ingress
+

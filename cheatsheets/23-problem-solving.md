@@ -1,15 +1,6 @@
 # Problem Solving Questions
 
 
-## Lists
-
-**Q.** Implement a circular sorted linked-list.
-
-**Q.** Implement a Queue (FIFO) using only standard Stacks (LIFO) data structures.
-
-**Q.** Implement a Stack which can give the maximum pushed entry as well using only standard Stacks.
-
-
 ## Algorithms
 
 **Q.** Solve the 8-Queens problem by backtracking.
@@ -38,8 +29,139 @@ and then return a list of all strings from a dictionary that starts with either 
 **Q.** There are N objects positioned in a row. Each of them is either black or white. Every time, we can swap only two adjacent objects.
 We want to arrange all the white objects together in one segment. Determine the minimum number of swaps required to format white objects.
 
+**Q.** Consider an NxN array specifying heights of buildings at each position.
+You can go up and down across rooftops with a fixed-size ladder.
+At each building, you can move in four directions (up, right, down, left).
+Given a length for you ladder, write an algorithm to get to bottom-right corner starting from top-left corner.
+
+```
+  ┌───┬───┬───┬───┬───┐
+  │ 0 │ 1 │ 1 │ 4 │ 6 │
+  ├───┼───┼───┼───┼───┤
+  │ 4 │ 4 │ 3 │ 1 │ 0 │
+  ├───┼───┼───┼───┼───┤
+  │ 4 │ 2 │ 4 │ 7 │ 5 │
+  ├───┼───┼───┼───┼───┤
+  │ 3 │ 8 │ 4 │ 2 │ 0 │
+  ├───┼───┼───┼───┼───┤
+  │ 2 │ 2 │ 3 │ 3 │ 1 │
+  └───┴───┴───┴───┴───┘
+
+Given a ladder of length 2, an answer is:
+0 > 1 > 1 v 3 v 4 v 4 v 3 > 3 > 1
+```
+
+**Q.** Your given an array that each element is an integer specifying the height of a building.
+Write an algorithm to compute the volume water that can be trapped between the buildings if it rains.
+
+```
+    █       █
+    █       █   █
+  █ █     █ █ █ █
+  █ █ █ █ █ █ █ █
+  █ █ █ █ █ █ █ █
+
+Array: [ 3, 5, 2, 2, 3, 5, 3, 4 ]
+Answer: 9
+```
+
+<details>
+<summary>Solution</summary>
+<p>
+
+```go
+func min(a, b int) int {
+  if a < b {
+    return a
+  }
+  return b
+}
+
+func calcVolume(heights []int) int {
+  total := 0
+  n := len(heights)
+
+  // O(n)
+  leftMax := make([]int, n)
+  leftMax[0] = heights[0]
+  for i := 1; i < n; i++ {
+    if heights[i] > leftMax[i-1] {
+      leftMax[i] = heights[i]
+    } else {
+      leftMax[i] = leftMax[i-1]
+    }
+  }
+
+  // O(n)
+  rightMax := make([]int, n)
+  rightMax[n-1] = heights[n-1]
+  for i := n-2; i >= 0; i-- {
+    if heights[i] > rightMax[i+1] {
+      rightMax[i] = heights[i]
+    } else {
+      rightMax[i] = rightMax[i+1]
+    }
+  }
+
+  // O(n)
+  for i := 1; i < n-1; i++ {
+    m := min(leftMax[i], rightMax[i])
+    total += m - heights[i]
+  }
+
+  return total
+}
+```
+
+</p>
+</details>
+
+**Q.** You are given a map of city divided into a number of plots and the cost of each plot is also given.
+Given a budget, determine the largest rectangular area of land we can purchase.
+
+```
+  ┌───┬───┬───┐
+  │ 2 │ 4 │ 7 │
+  ├───┼───┼───┤
+  │ 3 │ 1 │ 1 │
+  ├───┼───┼───┤
+  │ 5 │ 2 │ 2 │
+  └───┴───┴───┘
+```
+
+
+## Lists
+
+**Q.** Implement a circular sorted linked-list.
+
+**Q.** Implement a Queue (FIFO) using only standard Stacks (LIFO) data structures.
+
+**Q.** Implement a Stack which can give the maximum pushed entry as well using only standard Stacks.
+
 
 ## Trees
+
+**Q.** Consider an arbitrary tree in which every node is annotated with an integer greater than zero.
+A path is defined as a sequence of integers from the root to a leaf. A zero can match any node (wildcard). A query is a union of paths.
+A path matches a node if it ends with that node. A query matches a node if at least one of its paths matches the node.
+
+```
+        1
+     /  |   \
+    2   3    4
+   / \     / | \
+  5   6   7  8  9
+
+Paths:
+  <1,2,5>  matches 5
+  <1,4,0>  matches 7, 8, 9
+
+Queries:
+  <1,2,6> U <1,3>    matches 6, 3
+  <1,2,0> U <1,4,0>  matches 5, 6, 7, 8, 9
+```
+
+Write an algorithm to evaluate a query and determines the list of matching nodes.
 
 **Q.** Trie is a tree for indexing keys represented as strings. It is also called radix tree or prefix tree.
 For the purpose of this question we consider a binary trie.
@@ -123,7 +245,7 @@ Here are the rules for points:
   - A loss has no point
 
 <details>
-<summary>Solution ...</summary>
+<summary>Solution</summary>
 <p>
 
 ```sql

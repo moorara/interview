@@ -216,7 +216,7 @@ The transactions can be generated in _real-time_ and in a very _large scale_.
 **Q.** You are given two tables as follows:
 
 ```
-teams .                               matches
+ teams                                 matches
 +---------------+---------+           +---------------+---------+
 | id            | int     |<----|     | id            | int     |
 | name          | varchar |     |-----| host_id       | int .   |

@@ -22,6 +22,48 @@
   - Angular
   - AngularJS
 
+### React
+
+  - *Unidirectional* data flow
+  - **JSX**
+    - Syntax extension to JavaScript
+    - JSX is an Expression: JavaScript function calls that evaluate to objects
+  - **Component**
+    - **Props**
+      - A component never modify its own props.
+      - All React components must act like pure functions with respect to their props.
+    - **State**
+      - Do not modify state directly.
+      - State updates may be asynchronous or/and batched.
+      - State updates are merged.
+  - Tools:
+    - create-react-app
+    - react-devtools
+
+### Redux
+
+  - *One-way* data flow
+  - State Management
+    - **Actions**
+      - An action is a plain JavaScript object that has a type field (a descriptive name).
+      - An action object can have other fields with additional information (payload, etc.).
+      - An action creator is a function that creates and returns an action object.
+    - **Reducers**
+      - `(state, action) => newState`
+      - A reducer is a function that receives the current state and an action object.
+      - It decides how to update the state if necessary and returns the new state.
+    - **Store**
+      - API: `subscribe`, `dispatch`, `getState`
+      - The Redux application state lives in an object called the store.
+      - Selectors are functions to extract specific pieces of information from a store state.
+  - **Immutability**
+    - Redux expects that all state updates are done immutably.
+    - Objects and arrays must be copied and then modified.
+  - Tools:
+    - redux-toolkit
+    - react-redux
+    - redux-devtools-extensions
+
 
 ## Progressive Web Applications
 

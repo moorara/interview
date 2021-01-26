@@ -40,14 +40,15 @@
       - State updates are merged.
     - **Hooks**
       - Hooks let you use more of React's features without classes.
-      - Hooks allow reusing stateful logic without changing the component hierarchy. 
+      - Hooks allow reusing stateful logic (not state itself) without changing the component hierarchy. 
       - Hooks are functions that hook into React state and lifecycle features from function components.
       - Built-in Hooks:
         - `useState()`
         - `useEffect()`
+      - Custom Hooks are a convention in which a function's name starts with `use` and it calls other Hooks.
       - Rules:
-        - Only call hooks at the top level.
-        - Only call hooks from React function components.
+        - Only call Hooks at the top level.
+        - Only call Hooks from React function components.
     - *Lifecycle Methods*
       - Mounting
         - `constructor()`, `render()`, `componentDidMount()`

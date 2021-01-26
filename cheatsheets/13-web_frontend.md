@@ -52,7 +52,7 @@
       - Mounting
         - `constructor()`, `render()`, `componentDidMount()`
       - Updating
-        - `shouldComponentUpdate()`, `render(), `componentDidUpdate()`
+        - `shouldComponentUpdate()`, `render()`, `componentDidUpdate()`
       - Unmounting
         - `componentWillUnmount()`
       - Error Handling

@@ -29,13 +29,39 @@
     - Syntax extension to JavaScript
     - JSX is an Expression: JavaScript function calls that evaluate to objects
   - **Component**
+    - *Function Components* vs. *Class Components*
     - **Props**
       - A component never modify its own props.
       - All React components must act like pure functions with respect to their props.
     - **State**
       - Do not modify state directly.
+        - Use `setState({ ... }) or setState((state, props) => ...`
       - State updates may be asynchronous or/and batched.
       - State updates are merged.
+    - **Hooks**
+      - Hooks let you use more of React's features without classes.
+      - Hooks allow reusing stateful logic without changing the component hierarchy. 
+      - Hooks are functions that hook into React state and lifecycle features from function components.
+      - Built-in Hooks:
+        - `useState()`
+        - `useEffect()`
+      - Rules:
+        - Only call hooks at the top level.
+        - Only call hooks from React function components.
+    - *Lifecycle Methods*
+      - Mounting
+        - `constructor()`, `render()`, `componentDidMount()`
+      - Updating
+        - `shouldComponentUpdate()`, `render(), `componentDidUpdate()`
+      - Unmounting
+        - `componentWillUnmount()`
+      - Error Handling
+        - `componentDidCatch()`
+    - Cross-Cutting Concerns
+      - *Render Props*
+        - Sharing code between React components using a prop whose value is a function.
+      - *Higher-Order Components*
+        - A a pure function with zero side-effects that takes a component and returns a new component.
   - Tools:
     - create-react-app
     - react-devtools

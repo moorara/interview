@@ -47,6 +47,7 @@
         - `useEffect()`
         - `useContext()`
         - `useReducer()`
+        - `useCallback()`
       - Custom Hooks are a convention in which a function's name starts with `use` and it calls other Hooks.
       - Rules:
         - Only call Hooks at the top level.

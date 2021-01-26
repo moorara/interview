@@ -45,6 +45,8 @@
       - Built-in Hooks:
         - `useState()`
         - `useEffect()`
+        - `useContext()`
+        - `useReducer()`
       - Custom Hooks are a convention in which a function's name starts with `use` and it calls other Hooks.
       - Rules:
         - Only call Hooks at the top level.

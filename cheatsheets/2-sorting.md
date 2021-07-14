@@ -149,7 +149,7 @@ private static int partition(Comparable[] a, int lo, int hi) {
   return j;  // a[lo..j-1] <= a[j] <= a[j+1..hi]
 }
 
-// Recursive
+// Recursive function
 private static void sort(Comparable[] a, int lo, int hi) {
   if (hi <= lo) return;
   int j = partition(a, lo, hi);
@@ -157,7 +157,7 @@ private static void sort(Comparable[] a, int lo, int hi) {
   sort(a, j + 1, hi);
 }
 
-// Driver
+// Driver function
 public static void sort(Comparable[] a) {
   shuffle(a);  // can be done in Θ(n)
   sort(a, 0, a.length - 1);
@@ -196,7 +196,7 @@ public static Comparable select(Comparable[] a, int k) {
   - no smaller entries to the right of `gt`.
 
 ```java
-// Recursive
+// Recursive function
 private static void sort(Comparable[] a, int lo, int hi) {
   if (hi <= lo) return;
   int lt = lo, i = lo + 1, gt = hi;
@@ -211,7 +211,7 @@ private static void sort(Comparable[] a, int lo, int hi) {
   sort(a, gt + 1, hi);
 }
 
-// Driver
+// Driver function
 public static void sort(Comparable[] a) {
   shuffle(a);  // can be done in Θ(n)
   sort(a, 0, a.length - 1);

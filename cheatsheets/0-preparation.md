@@ -26,7 +26,7 @@
   - Speak about yourself, not your team
   - Converse, communicate, and interact!
   - State, clarify, and define your assumptions
-  - Explain your decision and other alternatives
+  - Explain your decisions and other alternatives
   - Have a conversation about advantages and disadvantages
   - Start with a simple solution, and then optimize up to a better solution
 

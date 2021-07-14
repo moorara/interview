@@ -92,7 +92,7 @@ private static void merge(Comparable[] a, Comparable[] aux, int lo, int mid, int
   }
 }
 
-// Recursive
+// Recursive function
 private static void sort(Comparable[] a, Comparable[] aux, int lo, int hi) {
   if (hi <= lo)
     return;
@@ -103,7 +103,7 @@ private static void sort(Comparable[] a, Comparable[] aux, int lo, int hi) {
   merge(a, aux, lo, mid, hi);
 }
 
-// Driver
+// Driver function
 public static void sort(Comparable[] a) {
   Comparable[] aux = new Comparable[a.length];
   sort(a, aux, 0, a.length - 1);

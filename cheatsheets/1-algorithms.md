@@ -34,7 +34,7 @@
       - Graph Coloring Decision Problem
   * **NP-Hard**
     - A **problem** is NP-Hard if all other problems in NP can be reduced to it in polynomial time.
-    - NP-hard problems do not have to be in NP, and they do not have to be decision problems.
+    - NP-hard problems do not have to be in NP, and they do not have to be *decision/decidable* problems.
     - NP-Hard problems are at least as hard as the hardest problems in NP (`NP-Complete ⊆ NP-Hard`).
     - Examples:
       - Knapsack Optimization Problem

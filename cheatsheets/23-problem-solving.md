@@ -1,6 +1,13 @@
 # Problem Solving Questions
 
 
+## Coding
+
+**Q.** Implement an LRU cache.
+
+**Q.** Implement the Unix `tail` command.
+
+
 ## Algorithms
 
 **Q.** Solve the 8-Queens problem by backtracking.
@@ -25,6 +32,13 @@ first compute a list of all strings that can be represented by that sequence of 
 and then return a list of all strings from a dictionary that starts with either of those calculated strings (prefixes).
 
 **Q.** Count and find all palindromes in a given string. A palindrome is a string which reads the same backward or forward.
+
+**Q.** You are given a pair of start and end times as well as a list of available jobs to complete.
+Find a set of schedulable jobs with the maximum profit.
+
+  - Each job has a start time, end time, and a pay.
+  - Each job can be scheduled within start and end times.
+  - Jobs can be scheduled back to back, but no two jobs can overlap.
 
 **Q.** There are N objects positioned in a row. Each of them is either black or white. Every time, we can swap only two adjacent objects.
 We want to arrange all the white objects together in one segment. Determine the minimum number of swaps required to format white objects.
@@ -128,7 +142,6 @@ Given a budget, determine the largest rectangular area of land we can purchase.
   │ 5 │ 2 │ 2 │
   └───┴───┴───┘
 ```
-
 
 ## Lists
 

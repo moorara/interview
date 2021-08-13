@@ -31,6 +31,22 @@ The solution should minimize computational time complexity to the best of your a
 first compute a list of all strings that can be represented by that sequence of digits (using _T9 keyboard_),
 and then return a list of all strings from a dictionary that starts with either of those calculated strings (prefixes).
 
+```
+-------------------------
+|       |  ABC  |  DEF  |
+|   1   |   2   |   3   |
+-------------------------
+|  GHI  |  JKL  |  MNO  |
+|   4   |   5   |   6   |
+-------------------------
+| PQRS  |  TUV  | WXYZ  |
+|   7   |   8   |   9   |
+-------------------------
+|       |       |       |
+|   *   |   0   |   #   |
+-------------------------
+```
+
 **Q.** Count and find all palindromes in a given string. A palindrome is a string which reads the same backward or forward.
 
 **Q.** You are given a pair of start and end times as well as a list of available jobs to complete.

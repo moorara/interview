@@ -723,13 +723,13 @@ public class KosarajuSCC {
 
 #### Union-Find
 
-  - The union-find (a.k.a. disjoint-sets) data type is collection of n elements.
+  - The union-find (a.k.a. disjoint-sets) data type is a collection of n elements.
     - Intially, each element belongs to exactly one set (n sets initially).
-    - Each set is represented by one element (_canonical element_, _root_, _identifier_, _leader_, or _set representative_).
+    - Each set is represented by one element (*canonical element*, *root*, *identifier*, *leader*, or *set representative*).
     - The **union** operation merges the set containing the element p with the set containing the element q.
     - The **find** operation returns the canonical element of the set containing the element p.
   - Elements in one set are considered connected to each other.
-  - _p is connected to q_ is an **equivalence relation**:
+  - *p is connected to q* is an **equivalence relation**:
     - Reflexive: p is connected to p.
     - Symmetric: If p is connected to q, then q is connected to p.
     - Transitive: If p is connected to q and q is connected to r, then p is connected to r.

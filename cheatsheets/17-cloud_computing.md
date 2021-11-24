@@ -114,7 +114,27 @@
 
   - **Compute**
     - Compute Engine
-    - Kubernetes Engine
+    - Kubernetes Engine (GKE)
+      - Operation:
+        - Standard
+        - Autopilot
+      - Version:
+        - Static Channel
+        - Release Channels
+          - Rapid
+          - Regular
+          - Stable
+      - Availability:
+        - Zonal clusters
+          - Single-zone clusters
+          - Multi-zonal clusters
+        - Regional clusters
+      - Networking:
+        - VPC-native
+        - Routes-based
+      - Isolation:
+        - Public
+        - Private
     - App Engine
     - Cloud Functions
   - **Storage**

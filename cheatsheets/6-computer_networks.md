@@ -32,7 +32,7 @@
     - Services: Reliable transmission between nodes on a network, Same-Order Delivery, Connection-Oriented Communication, Multiplexing, ...
   - **Network Layer**
     - Unit of data: Packets
-    - Protocols: IPv4/IPv6, IPsec, ICMP, IGMP
+    - Protocols: BGP, IPv4/IPv6, IPsec, ICMP, IGMP
     - Services: Connectionless Communication, Addressing, Routing, Forwarding, Traffic Control, ...
   - **Data Link Layer**
     - Unit of data: Frames
@@ -54,13 +54,13 @@
     - Protocols: TCP, UDP, DCCP, ...
   - **Internet/Network Layer**
     - OSI Layer: Network
-    - Protocols: IPv4/IPv6, IPsec, ICMP, IGMP, ...
+    - Protocols: BGP, IPv4/IPv6, IPsec, ICMP, IGMP, ...
   - **Link Layer**
     - OSI Layer: Data Link + Physical
     - Protocols: ARP, PPP, NDP, MAC, ...
 
 
-## Network Protocols
+## Protocols
 
   - **ARP**
     - Layer: Link
@@ -71,6 +71,17 @@
       - Discovery of other nodes on the link
       - Determining the link layer addresses of other nodes
       - Finding available routers and DNS servers
+  - **BGP**
+    - Layer: Internet/Network
+    - The Border Gateway Protocol (BGP) is designed to exchange routing and reachability information among autonomous systems (AS) on the Internet.
+      - The Internet is a network of networks. It is broken up into hundreds of thousands of smaller networks known as autonomous systems (ASes).
+    - BGP is responsible for looking at all of the available paths that data could travel and picking the best route (hopping between autonomous systems).
+    - External BGP (eBGP)
+      - Routes are exchanged and traffic is transmitted over the Internet using external BGP (eBGP).
+    - Internal BGP (iBGP)
+      - Autonomous systems can also use an internal version of BGP to route through their internal networks (iBGP).
+      - Using internal BGP is NOT a requirement for using external BGP.
+      - Autonomous systems can choose from a number of internal protocols to connect the routers on their internal network.
   - **ICMP, ICMPv6**
     - Layer: Internet/Network
     - The Internet Control Message Protocol (ICMP) is used by network devices to send error messages or query messages.

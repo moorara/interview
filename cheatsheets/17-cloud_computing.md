@@ -114,20 +114,20 @@
  
  Who can do what on which resource:
    - **Who**
-     - Google account
+     - Google Account
      - Google Group
-     - Service account
-   - **Can do what:**
-   - **On which resource:**
+     - Service Account
+   - **Can do what**
+   - **On which resource**
 
 **Roles:** a group of permissions
-  - **Primitive:** apply to a project (and all resources in the project)
+  - **Primitive** roles apply to a project (and all resources in the project)
     - Owner
     - Editor
     - Viewer
     - Billing Admin
-  - **Predefined:** apply to a particular service in a project
-  - **Custom** can be used for least privilege access
+  - **Predefined** roles apply to a particular service in a project
+  - **Custom** roles can be used for least privilege access
  
  ## Services
 

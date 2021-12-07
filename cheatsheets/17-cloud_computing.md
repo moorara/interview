@@ -110,6 +110,25 @@
       - To protect against the loss of an entire region.
    - A few Google Cloud Platform Services support placing resources in a Multi-Region.
  
+ ### IAM
+ 
+ Who can do what on which resource:
+   - **Who**
+     - Google account
+     - Google Group
+     - Service account
+   - **Can do what:**
+   - **On which resource:**
+
+**Roles:** a group of permissions
+  - **Primitive:** apply to a project (and all resources in the project)
+    - Owner
+    - Editor
+    - Viewer
+    - Billing Admin
+  - **Predefined:** apply to a particular service in a project
+  - **Custom** can be used for least privilege access
+ 
  ## Services
 
   - **Compute**

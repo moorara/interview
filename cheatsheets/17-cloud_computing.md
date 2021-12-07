@@ -156,3 +156,17 @@
     - Speech API
     - Natural Language API
 
+## Load Balancers
+
+  - **Internal**
+    - Regional
+      - Internal TCP/UDP Load Balancer (Premium network, Pass-through)
+      - Internal HTTP(S) Load Balancer (Premium network, Proxy)
+  - **External**
+    - Regional
+      - External TCP/UDP Network Load Balancer (Premium or Standard network, Pass-through)
+      - Regional External HTTP(S) Load Balancer (Standard network, Proxy)
+    - Global
+      - TCP Proxy Load Balancer (Premium or Standard network, Proxy)
+      - SSL Proxy Load balancer (Premium or Standard network, Proxy)
+      - Global External HTTP(S) Load Balancer (Premium or Standard network, Proxy)

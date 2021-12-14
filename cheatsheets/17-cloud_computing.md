@@ -119,6 +119,7 @@
      - Service Account
        - User-created (custom)
        - Built-in
+         - *Default Compute Engine service account*
        - Google APIs service account
    - **Can do what**
    - **On which resource**

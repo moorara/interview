@@ -117,6 +117,9 @@
      - Google Account
      - Google Group
      - Service Account
+       - User-created (custom)
+       - Built-in
+       - Google APIs service account
    - **Can do what**
    - **On which resource**
 

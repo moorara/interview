@@ -131,7 +131,7 @@
     - Viewer
     - Billing Admin
   - **Predefined** roles apply to a particular service in a project
-  - **Custom** roles can be used for least privilege access
+  - **Custom** roles can be used for practicing the principle of least privilege
  
  ## Services
 

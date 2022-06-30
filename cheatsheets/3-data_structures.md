@@ -12,7 +12,7 @@
     - Linked-List
     - Stack (LIFO)
     - Queue (FIFO)
-    - [Skip-List](#skip-lists)
+    - [Skip-List](#skip-list)
   * [**Heaps**](#heap)
     - Binary Heaps
     - Binomial Heaps

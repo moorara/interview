@@ -260,11 +260,11 @@ public static void sort(Comparable[] a) {
 
 ```java
 // fixed-length W strings
-public static void sort(String[] a, int W) {
+public static void sort(String[] a, int w) {
   int R = 256;  // extended ASCII size
   int N = a.length;
   String[] aux = new String[N];
-  for (int d = W-1; d >= 0; d--) {            // sort by key-indexed counting on dth char (stable)
+  for (int d = w-1; d >= 0; d--) {            // sort by key-indexed counting on dth char (stable)
     int[] count = new int[R+1];
     for (int i = 0; i < N; i++)               // compute frequency counts
       count[a[i].charAt(d) + 1]++;

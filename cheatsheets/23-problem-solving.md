@@ -194,7 +194,8 @@ Write an algorithm to evaluate a query and determines the list of matching nodes
 
 **Q.** Trie is a tree for indexing keys represented as strings. It is also called radix tree or prefix tree.
 For the purpose of this question we consider a binary trie.
-A binary trie is a binary tree in which the left child represents the next character in a string and the right child represents the next character in the same level.
+A binary trie is a binary tree in which the left child represents the next character in a string
+and the right child represents an alternative character in the same position as the current character.
 Here is an example:
 
 ```

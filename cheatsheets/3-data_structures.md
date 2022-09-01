@@ -25,8 +25,9 @@
       - [Red-Black Binary Search Tree](#red-black)
       - [B-Tree, B<sup>+</sup>-Tree, B<sup>\*</sup>-Tree](#b-tree)
       - Splay Tree
-      - Trie/Prefix Tree
-      - Radix/Patricia Tree
+      - Trie (Prefix Tree)
+      - Radix Tree
+      - Patricia Tree
     - Unordered:
       - [Hash Tables](#hash-tables)
   * [**Spatial**](#spatial-data-structures)

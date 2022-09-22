@@ -2,6 +2,9 @@
 
 A collection of notes and resources for beating technical interviews for software developer and engineer positions!
 
+For implementation of the major algorithms and data structures in [Go](https://go.dev),
+see [this](https://github.com/moorara/algo) repository.
+
 ## Cheatsheets
 
   - [Preparation](./cheatsheets/0-preparation.md)
@@ -30,4 +33,3 @@ A collection of notes and resources for beating technical interviews for softwar
   - [Problem Solving](./cheatsheets/23-problem-solving.md)
   - [Cultural-Behavioral](./cheatsheets/24-cultural-behavioral.md)
   - [Candidate Questions](./cheatsheets/25-candidate-questions.md)
-

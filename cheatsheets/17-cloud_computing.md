@@ -79,25 +79,53 @@
 
 ##### Objects
 
-  - Pod
-  - Deployment
-  - Service
-  - ConfigMap
-  - Secret
-  - Ingress
-  - Namespace
+  - **Workloads**
+    - [Pod](https://kubernetes.io/docs/concepts/workloads/pods)
+    - [Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment)
+      - [ReplicaSet](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset)
+    - [StatefulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset)
+      - Like a Deployment, a StatefulSet manages Pods that are based on an identical container spec. 
+      - Unlike a Deployment, a StatefulSet maintains a *sticky identity* for each of their Pods.
+      - The pods are created from the same spec, but are not interchangeable.
+      - Each pod has a persistent identifier that it maintains across any rescheduling.
+    - [DaemonSet](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset)
+    - [Job](https://kubernetes.io/docs/concepts/workloads/controllers/job)
+    - [CronJob](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs)
+  - **Networking**
+    - [Service](https://kubernetes.io/docs/concepts/services-networking/service)
+      - [EndpointSlice](https://kubernetes.io/docs/concepts/services-networking/endpoint-slices)
+    - [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress)
+    - [NetworkPolicy](https://kubernetes.io/docs/concepts/services-networking/network-policies)
+  - **Storage**
+    - [ProjectedVolume](https://kubernetes.io/docs/concepts/storage/projected-volumes)
+    - [PersistentVolume](https://kubernetes.io/docs/concepts/storage/persistent-volumes)
+    - [StorageClass](https://kubernetes.io/docs/concepts/storage/storage-classes)
+  - **Configuration**
+    - [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap)
+    - [Secret](https://kubernetes.io/docs/concepts/configuration/secret)
 
 ##### Labels
 
+  - Labels do not provide uniqueness.
   - Labels are key-value pairs attached to objects.
   - Labels specify identifying attributes of objects.
-  - Labels are used to *identify* and *select* objects.
-  - They are meaningful and relevant to users, but do not imply any semantics.
+    - They are meaningful and relevant to users, but do not directly imply semantics to the core system.
+  - Labels are used to identify, organize, and select subsets of objects.
+  - Labels enable users to map their organizational structures onto objects without requiring clients to store these mappings.
+  - Valid label keys have two segments: an optional **prefix** and a required **name**, separated by a slash `/`.
+    - If the prefix is omitted, the label Key is presumed to be private to the user.
+    - Automated system components which add labels to end-user objects must specify a prefix (`kubernetes.io/`, `k8s.io/`).
+  - **Label Selectors**
+    - *Equality-based* requirement
+    - *Set-based* requirement (`in`, `notin`, exist, and not exist `!`)
 
 ##### Annotations
 
   - Annotations attach arbitrary non-identifying metadata to objects.
   - Annotations can be small or large, structured or unstructured, and can include characters not permitted by labels.
+    - Note: The keys and the values in the map must be strings.
+  - Valid annotation keys have two segments: an optional **prefix** and a required **name**, separated by a slash `/`.
+    - The prefix is optional. If specified, the prefix must be a DNS subdomain.
 
 ##### Affinity/Anti-affinity
 
@@ -123,6 +151,11 @@
   - *Tolerations* are applied to pods, and allow (but do not require) the pods to schedule onto nodes with matching taints.
 
 #### Commands
+
+  - **config**
+  - **pod**
+  - **deployment**
+  - **service**
 
 
 ## Google Cloud

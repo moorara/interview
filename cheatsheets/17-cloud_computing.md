@@ -77,40 +77,52 @@
 
 #### Concepts
 
-  - **Objects**
-    - Pod
-    - Deployment
-    - Service
-    - ConfigMap
-    - Secret
-    - Ingress
-  - **Labels**
-    - Labels are key-value pairs attached to objects.
-    - Labels specify identifying attributes of objects.
-    - Labels are used to *identify* and *select* objects.
-    - They are meaningful and relevant to users, but do not imply any semantics.
-  - **Annotations**
-    - Annotations attach arbitrary non-identifying metadata to objects.
-    - Annotations can be small or large, structured or unstructured, and can include characters not permitted by labels.
-  - **Affinity/Anti-affinity**
-    - Node affinity
-      - Node affinity is conceptually similar to *nodeSelector*.
-      - Constrain which nodes your pod is eligible to be scheduled on based on labels on the node.
-      - Two types:
-        - `requiredDuringSchedulingIgnoredDuringExecution`
-        - `preferredDuringSchedulingIgnoredDuringExecution`
-    - Inter-Pod affinity/anti-affinity
-      - Constrain which nodes your pod is eligible to be scheduled based on labels on pods already running on the node.
-      - Rule --> This pod should (or should not) run in an X if X is already running one or more pods that meet rule Y.
-        - X is a *topology domain* like node, availability zone, region, etc. You express it using a `topologyKey`.
-        - Y is expressed as a *LabelSelector* with an optional associated list of namespaces (labels on pods are implicitly namespaced).
-      - Two types:
-        - `requiredDuringSchedulingIgnoredDuringExecution`
-        - `preferredDuringSchedulingIgnoredDuringExecution`
-  - **Taints and Tolerations**
-    - Node affinity is a property of Pods that attracts them to a set of nodes (hard or soft).
-    - *Taints* are the opposite! They allow a node to repel a set of pods.
-    - *Tolerations* are applied to pods, and allow (but do not require) the pods to schedule onto nodes with matching taints.
+##### Objects
+
+  - Pod
+  - Deployment
+  - Service
+  - ConfigMap
+  - Secret
+  - Ingress
+  - Namespace
+
+##### Labels
+
+  - Labels are key-value pairs attached to objects.
+  - Labels specify identifying attributes of objects.
+  - Labels are used to *identify* and *select* objects.
+  - They are meaningful and relevant to users, but do not imply any semantics.
+
+##### Annotations
+
+  - Annotations attach arbitrary non-identifying metadata to objects.
+  - Annotations can be small or large, structured or unstructured, and can include characters not permitted by labels.
+
+##### Affinity/Anti-affinity
+
+  - Node affinity
+    - Node affinity is conceptually similar to *nodeSelector*.
+    - Constrain which nodes your pod is eligible to be scheduled on based on labels on the node.
+    - Two types:
+      - `requiredDuringSchedulingIgnoredDuringExecution`
+      - `preferredDuringSchedulingIgnoredDuringExecution`
+  - Inter-Pod affinity/anti-affinity
+    - Constrain which nodes your pod is eligible to be scheduled based on labels on pods already running on the node.
+    - Rule --> This pod should (or should not) run in an X if X is already running one or more pods that meet rule Y.
+      - X is a *topology domain* like node, availability zone, region, etc. You express it using a `topologyKey`.
+      - Y is expressed as a *LabelSelector* with an optional associated list of namespaces (labels on pods are implicitly namespaced).
+    - Two types:
+      - `requiredDuringSchedulingIgnoredDuringExecution`
+      - `preferredDuringSchedulingIgnoredDuringExecution`
+
+##### Taints and Tolerations**
+
+  - Node affinity is a property of Pods that attracts them to a set of nodes (hard or soft).
+  - *Taints* are the opposite! They allow a node to repel a set of pods.
+  - *Tolerations* are applied to pods, and allow (but do not require) the pods to schedule onto nodes with matching taints.
+
+#### Commands
 
 
 ## Google Cloud

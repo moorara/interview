@@ -29,6 +29,15 @@
 
 ## Containerization
 
+  - **Container Runtime Interface (CRI)**
+    - [containerd](https://containerd.io)
+    - [CRI-O](https://cri-o.io)
+  - **Open Container Initiative (OCI)**
+    - [runc](https://github.com/opencontainers/runc)
+    - [crun](https://github.com/containers/crun)
+    - [gVisor](https://gvisor.dev)
+    - [kata-runtime](https://github.com/kata-containers/runtime)
+
 ### Docker
 
 #### Technologies
@@ -41,7 +50,30 @@
 
 ### Kubernetes
 
+  - Container Orchestration
+  - Overlay Networking
+  - Service Discovery & Load Balancing
+  - Storage Orchestration
+  - Automated Rollouts & Rollbacks
+  - Automatic Bin Packing
+  - Autoscaling & Self-Healing
+  - Config & Secret Management
+
 #### Architecture
+
+  - **Control Plane Components**
+    - kube-apiserver
+    - etcd
+    - kube-scheduler
+    - kube-controller-manager
+    - cloud-controller-manager
+  - **Node Components**
+    - kubelet
+    - kube-proxy
+    - container-runtime
+  - **Addons**
+    - DNS
+    - Web UI
 
 #### Concepts
 

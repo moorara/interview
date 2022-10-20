@@ -127,15 +127,17 @@
   - Valid annotation keys have two segments: an optional **prefix** and a required **name**, separated by a slash `/`.
     - The prefix is optional. If specified, the prefix must be a DNS subdomain.
 
-##### Affinity/Anti-affinity
+##### Assigning Pods to Nodes
 
-  - Node affinity
-    - Node affinity is conceptually similar to *nodeSelector*.
-    - Constrain which nodes your pod is eligible to be scheduled on based on labels on the node.
+  - **NodeSelector**
+    - NodeSelector is the simplest recommended form of node selection constraint.
+    - It constrain which nodes your pod is eligible to be scheduled on based on labels on the node.
+  - **Affinity & Anti-Affinity**
+    - Node affinity is conceptually similar to *nodeSelector*, but the language is more expressive.
     - Two types:
       - `requiredDuringSchedulingIgnoredDuringExecution`
       - `preferredDuringSchedulingIgnoredDuringExecution`
-  - Inter-Pod affinity/anti-affinity
+  - **Inter-Pod Affinity & Anti-Affinity**
     - Constrain which nodes your pod is eligible to be scheduled based on labels on pods already running on the node.
     - Rule --> This pod should (or should not) run in an X if X is already running one or more pods that meet rule Y.
       - X is a *topology domain* like node, availability zone, region, etc. You express it using a `topologyKey`.
@@ -146,16 +148,80 @@
 
 ##### Taints and Tolerations**
 
-  - Node affinity is a property of Pods that attracts them to a set of nodes (hard or soft).
+  - *Node affinity* is a property of *Pods* that attracts them to a set of nodes (hard or soft).
   - *Taints* are the opposite! They allow a node to repel a set of pods.
-  - *Tolerations* are applied to pods, and allow (but do not require) the pods to schedule onto nodes with matching taints.
+  - *Tolerations* are applied to pods, and allow the pods to schedule onto nodes with matching taints.
+    - They allow scheduling but don't guarantee scheduling!
+  - Taints and tolerations work together to ensure that pods are not scheduled onto inappropriate nodes.
 
 #### Commands
 
   - **config**
+    - `kubectl config view`
+    - `kubectl config get-contexts`
+    - `kubectl config current-context`
+    - `kubectl config use-context <name>`
+  - **misc**
+    - `kubectl apply -f <file>`
+    - `kubectl edit <object> <name>`
+    - `kubectl create <object> <name>`
+    - `kubectl delete <object> <name>`
   - **pod**
+    - `kubectl get pods`
+    - `kubectl get pods --all-namespaces`
+    - `kubectl get pods --namespace=<name>`
+    - `kubectl logs <pod>`
+    - `kubectl logs <pod> --container=<name>`
+    - `kubectl exec --stdin --tty <pod> -- /bin/sh`
+    - `kubectl exec --stdin --tty <pod> --container=<name> -- /bin/sh`
+    - `kubectl port-forward <pod> <local_port>:<pod_port>`
+    - `kubectl port-forward deploy/<name> <local_port>:<pod_port>`
+    - `kubectl port-forward service/<name> <local_port>:<pod_port>`
+    - `kubectl top pod <name> --containers`
+    - `kubectl top pod <name> --sort-by=cpu`
   - **deployment**
+    - `kubectl get deployments/deploys`
+    - `kubectl get deployments/deploys --all-namespaces`
+    - `kubectl get deployments/deploys --namespace=<name>`
+    - `kubectl get deployment/deploy <name>`
+    - `kubectl get deployment/deploy --namespace=<name> <name>`
+    - `kubectl scale deployment/<name> --replicas=<count>`
+    - `kubectl scale replicaset/<name> --replicas=<count>`
+    - `kubectl rollout status deployment/<name>`
+    - `kubectl rollout history deployment/<name>`
+    - `kubectl rollout undo deployment/<name>`
+    - `kubectl rollout undo deployment/<name> --to-revision=<num>`
+    - `kubectl rollout restart deployment/<name>`
   - **service**
+    - `kubectl get services`
+    - `kubectl get services --all-namespaces`
+    - `kubectl get services --namespace=<name>`
+    - `kubectl get service <name>`
+    - `kubectl get service --namespace=<name> <name>`
+  - **ingress**
+    - `kubectl get ingresses`
+    - `kubectl get ingresses --all-namespaces`
+    - `kubectl get ingresses --namespace=<name>`
+    - `kubectl get ingress <name>`
+    - `kubectl get ingress --namespace=<name> <name>`
+  - **configmap**
+    - `kubectl get configmaps`
+    - `kubectl get configmaps --all-namespaces`
+    - `kubectl get configmaps --namespace=<name>`
+    - `kubectl get configmap <name>`
+    - `kubectl get configmap --namespace=<name> <name>`
+  - **secret**
+    - `kubectl get secrets`
+    - `kubectl get secrets --all-namespaces`
+    - `kubectl get secrets --namespace=<name>`
+    - `kubectl get secret <name>`
+    - `kubectl get secret --namespace=<name> <name>`
+  - **node**
+    - `kubectl get nodes`
+    - `kubectl drain <node>`
+    - `kubectl cordon <node>`
+    - `kubectl uncordon <node>`
+    - `kubectl top node <node>`
 
 
 ## Google Cloud

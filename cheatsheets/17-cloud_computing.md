@@ -154,6 +154,25 @@
     - They allow scheduling but don't guarantee scheduling!
   - Taints and tolerations work together to ensure that pods are not scheduled onto inappropriate nodes.
 
+#### Operations
+
+  - **Authentication**
+    - All Kubernetes clusters have two categories of users: **service accounts** (managed by Kubernetes), and normal **users**.
+  - **Authorization** Modes
+    - [Role-Based Access Control](https://kubernetes.io/docs/reference/access-authn-authz/rbac) (**RBAC**)
+      - **Role** 
+        - A Role always sets permissions within a particular namespace.
+        - A **RoleBinding** grants the permissions defined in a role to a user or set of users within a specific namespace.
+        - A RoleBinding may reference any Role in the same namespace.
+        - A RoleBinding can reference a ClusterRole and bind that ClusterRole to the namespace of the RoleBinding.
+      - **ClusterRole**
+        - A *ClusterRole* is a non-namespaced resource.
+        - A *ClusterRoleBinding* bind a ClusterRole to all the namespaces in your cluster.
+    - [Attribute-Based Access Control](https://kubernetes.io/docs/reference/access-authn-authz/abac) (**ABAC**)
+      - ABAC defines an access control paradigm whereby access rights are granted to users through the use of policies which combine attributes together.
+    - [Node](https://kubernetes.io/docs/reference/access-authn-authz/node)
+    - [Webhook](https://kubernetes.io/docs/reference/access-authn-authz/webhook)
+
 #### Commands
 
   - **config**
@@ -222,6 +241,9 @@
     - `kubectl cordon <node>`
     - `kubectl uncordon <node>`
     - `kubectl top node <node>`
+  - **auth**
+    - `kubectl auth can-i <verb> <resource>`
+    - `kubectl auth can-i <verb> <resource> --namespace=<name>`
 
 
 ## Google Cloud

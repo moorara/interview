@@ -11,8 +11,8 @@
 
   - **Situation:** What was the situation and context like?
   - **Task:** What were you required to achieve?
-  - **Action** What did you do?
-  - **Results** What was the outcome of your actions?
+  - **Action:** What did you do?
+  - **Results:** What was the outcome of your actions?
 
 ## What To Look For?
 

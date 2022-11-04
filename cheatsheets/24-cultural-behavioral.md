@@ -26,4 +26,5 @@
   - [The 30 most common Software Engineer behavioral interview questions](https://www.techinterviewhandbook.org/behavioral-interview-questions)
   - [16 cultural fit interview questions for tech recruiters](https://www.wearedevelopers.com/blog/16-cultural-fit-interview-questions-for-tech-recruiters)
   - [The 3 questions this CEO uses to weed out jerks](https://ideas.ted.com/the-3-questions-this-ceo-uses-to-weed-out-jerks)
+  - [GitLab Values Page](https://about.gitlab.com/handbook/values)
 

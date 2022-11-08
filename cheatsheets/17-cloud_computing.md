@@ -1,14 +1,14 @@
 # Cloud Computing
 
-  - **On-demand self-service**
+  - **On-demand Self-Service**
     - No human intervention needed to get resources.
   - **Broad Network Access**
     - Access from anywhere.
   - **Resource Pooling**
     - Provider share resources to customers.
-  - **Rapid elasticity**
+  - **Rapid Elasticity**
     - Get more resources quickly as needed.
-  - **Measured service**
+  - **Measured Service**
     - Pay only for what you consume.
 
 ## Best Practices

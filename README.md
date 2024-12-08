@@ -15,7 +15,7 @@ see [this](https://github.com/moorara/algo) repository.
   - [Operating Systems](./cheatsheets/5-operating_systems.md)
   - [Computer Networks](./cheatsheets/6-computer_networks.md)
   - [Software Security](./cheatsheets/7-software_security.md)
-  - [Object-Oriented](./cheatsheets/8-object_oriented.md)
+  - [Object-Oriented Programming](./cheatsheets/8-object-oriented_programming.md)
   - [Software Architecture](./cheatsheets/9-software_architecture.md)
   - [Software Testing](./cheatsheets/10-software_testing.md)
   - [Unix/Linux](./cheatsheets/11-unix_linux.md)
